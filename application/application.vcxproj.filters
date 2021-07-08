@@ -27,6 +27,12 @@
     <ClCompile Include="userDefine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="userPresentation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="userData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="presentation.h">
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="userDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="userPresentation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="userData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

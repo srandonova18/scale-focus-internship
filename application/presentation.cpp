@@ -13,16 +13,8 @@ void loginMenu()
 	safeCin<std::string>(username);
 	std::cout << username << std::endl;
 	std::cout << "password: ";
-	
-	char password[10];
-
-	int numberOfSymbols = 0;
-	while ((password[numberOfSymbols] = _getch()) != '\r')
-	{
-		std::cout << "*";
-		numberOfSymbols++;
-	}
 }
+
 
 
 

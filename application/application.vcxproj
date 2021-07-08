@@ -145,12 +145,16 @@
     <ClCompile Include="application.cpp" />
     <ClCompile Include="helpers.cpp" />
     <ClCompile Include="presentation.cpp" />
+    <ClCompile Include="userData.cpp" />
     <ClCompile Include="userDefine.cpp" />
+    <ClCompile Include="userPresentation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="helpers.h" />
     <ClInclude Include="presentation.h" />
+    <ClInclude Include="userData.h" />
     <ClInclude Include="userDefine.h" />
+    <ClInclude Include="userPresentation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

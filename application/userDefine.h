@@ -15,5 +15,6 @@ struct USER
 	nanodbc::date dateOfLastChange;
 	int lastChangerId = 0;
 
-	void addUser();
+	USER addUser();
+	void showUser(USER);
 };
