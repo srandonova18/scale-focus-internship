@@ -1,5 +1,10 @@
 #pragma once
 
+#include <iostream>
+#include <vector>
+
+#include "presentation.h"
+
 template <class T>
 bool safeCin(T& data)
 {
@@ -13,3 +18,8 @@ bool safeCin(T& data)
 
 	return true;
 };
+
+void showMenuOptions(std::vector<MENU_OPTION>&);
+
+
+void handleUserChoice(std::vector<MENU_OPTION>&);

@@ -1,4 +1,8 @@
 #pragma once
 
-void userMenu();
+#include "presentation.h"
+
+std::vector<MENU_OPTION> initializeUserManagementViewMenuOptions();
+
+void userManagementView();
 
