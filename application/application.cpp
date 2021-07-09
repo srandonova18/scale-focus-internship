@@ -6,6 +6,7 @@
 #include "presentation.h"
 #include "helpers.h"
 #include "userPresentation.h"
+#include "userDefine.h"
 
 using namespace std;
 
@@ -13,9 +14,12 @@ int main()
 {
     try
     {
-        //nanodbc::string connstr = NANODBC_TEXT("DRIVER={ODBC Driver 17 for SQL Server};SERVER=DESKTOP-U38BG7I\\SQLEXPRESS;DATABASE=project_management_application;Trusted_Connection=yes;"); // an ODBC connection string to your database
+        nanodbc::string connstr = NANODBC_TEXT("DRIVER={ODBC Driver 17 for SQL Server};SERVER=DESKTOP-U38BG7I\\SQLEXPRESS;DATABASE=project_management_application;Trusted_Connection=yes;"); // an ODBC connection string to your database
 
-        //nanodbc::connection conn(connstr);
+        nanodbc::connection conn(connstr);
+
+        //USER user;
+        //user.addUser(conn);
 
         return EXIT_SUCCESS;
     }

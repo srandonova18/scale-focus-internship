@@ -1,7 +1,7 @@
 #pragma once
 
 #include<iostream>
-//#include<nanodbc.h>
+#include<nanodbc.h>
 
 struct USER
 {
@@ -10,11 +10,13 @@ struct USER
 	char password[10];
 	std::string firstName;
 	std::string lastName;
-	//nanodbc::date dateOfCreation;
+	nanodbc::date dateOfCreation;
 	int creatorId = 0;
-	//nanodbc::date dateOfLastChange;
+	nanodbc::date dateOfLastChange;
 	int lastChangerId = 0;
 
-	USER addUser();
+	void addUser(nanodbc::connection);
 	void showUser(USER);
 };
+
+void insertUser(nanodbc::connection connection, const USER& user);
