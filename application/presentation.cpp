@@ -23,7 +23,7 @@ USER loginMenu(nanodbc::connection connection)
 	return currentUser;
 }
 
-bool isAdmin(USER currentUser)
+bool isAdmin(const USER& currentUser)
 {
 	return currentUser.id == 1;
 }

@@ -23,8 +23,8 @@ int main()
 
         user = loginMenu(conn);
 
-        if (isAdmin)
-            userManagementView(conn, user);
+        if (isAdmin(user))
+            userManagementView(conn, user, user);
 
         //showUser(user);
 
