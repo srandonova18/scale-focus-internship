@@ -6,10 +6,10 @@
 struct USER
 {
 	int id = 0;
-	std::string username;
-	std::string password;
-	std::string firstName;
-	std::string lastName;
+	std::string username = "";
+	std::string password = "";
+	std::string firstName = "";
+	std::string lastName = "";
 	nanodbc::date dateOfCreation;
 	int creatorId = 0;
 	nanodbc::date dateOfLastChange;

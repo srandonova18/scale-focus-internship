@@ -26,5 +26,10 @@ void USER::addUser(nanodbc::connection connection, USER currentUser)
 
 void USER::showUser(USER user)
 {
-	std::cout << user.id << user.firstName << " " << user.lastName << " " << user.username << " " << user.dateOfLastChange.day;
+	std::cout << std::endl << "Id: " << user.id << std::endl;
+	std::cout << "First name: " << user.firstName << std::endl;
+	std::cout << "Last name: " << user.lastName << std::endl;
+	std::cout << "Username: " << user.username << std::endl;
+	std::cout << "Date of profile creation:  ";
+	std::cout << user.dateOfCreation.day << "/" << user.dateOfCreation.month << "/" << user.dateOfCreation.year << std::endl;
 }

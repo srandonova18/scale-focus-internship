@@ -23,7 +23,9 @@ int main()
 
         user = loginMenu(conn);
 
-        user.addUser(conn, user);
+        user.showUser(user);
+
+        //user.addUser(conn, user);
 
         return EXIT_SUCCESS;
     }
