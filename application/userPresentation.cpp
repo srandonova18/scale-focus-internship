@@ -6,6 +6,7 @@
 #include "helpers.h"
 #include "userDefine.h"
 #include "presentation.h"
+#include "userData.h"
 
 std::vector<MENU_OPTION> initializeUserManagementViewMenuOptions()
 {
@@ -14,7 +15,7 @@ std::vector<MENU_OPTION> initializeUserManagementViewMenuOptions()
 		{1, ".Create new user", addUser},
 		{2, ".Edit user", },
 		{3, ".Delete user",},
-		{4, ".View all users"}
+		{4, ".View all users", getAllUsers}
 	};
 
 	return menu;

@@ -6,6 +6,7 @@
 #include "userData.h"
 #include "helpers.h"
 #include "userDefine.h"
+#include "userPresentation.h"
 
 std::string inputName()
 {
@@ -88,4 +89,36 @@ USER findUserByUsernameAndPassword(nanodbc::connection connection, const USER& u
 	}
 
 	return foundUser;
+}
+
+void getAllUsers(nanodbc::connection connection, const USER& user)
+{
+	USER foundUser;
+
+	nanodbc::statement statement(connection);
+	nanodbc::prepare(statement, NANODBC_TEXT(R"(
+	SELECT
+		*
+	FROM [project_management_application].[dbo].[users]
+	)"));
+
+	auto result = execute(statement);
+
+	while (result.next())
+	{
+		foundUser.id = result.get<int>("id");
+		foundUser.username = result.get<nanodbc::string>("username", "");
+		foundUser.password = result.get<nanodbc::string>("password", "");
+		foundUser.firstName = result.get<nanodbc::string>("first_name", "");
+		foundUser.lastName = result.get<nanodbc::string>("last_name", "");
+		foundUser.dateOfCreation = result.get<nanodbc::date>("date_of_creation");
+		foundUser.creatorId = result.get<int>("creator_id");
+		foundUser.dateOfLastChange = result.get<nanodbc::date>("date_of_last_change");
+		foundUser.lastChangerId = result.get<int>("last_changer_id");
+		foundUser.isDeleted = result.get<int>("is_deleted");
+
+		showUser(foundUser);
+	}
+
+	userManagementView(connection, user);
 }

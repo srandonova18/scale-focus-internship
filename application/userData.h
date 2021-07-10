@@ -13,3 +13,4 @@ void insertUser(nanodbc::connection, const USER&, USER);
 
 USER findUserByUsernameAndPassword(nanodbc::connection, const USER&);
 
+void getAllUsers(nanodbc::connection connection, const USER& user);

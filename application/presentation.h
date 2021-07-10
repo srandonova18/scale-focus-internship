@@ -4,7 +4,7 @@
 
 #include "userDefine.h"
 
-typedef void (*MENU_HADLER)(nanodbc::connection connection, USER currentUser);
+typedef void (*MENU_HADLER)(nanodbc::connection connection, const USER& currentUser);
 
 struct MENU_OPTION
 {
