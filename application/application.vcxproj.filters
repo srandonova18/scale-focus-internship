@@ -33,6 +33,12 @@
     <ClCompile Include="userData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="teamDefine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="teamData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="presentation.h">
@@ -48,6 +54,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="userData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="teamDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="teamData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="teamPresentation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
