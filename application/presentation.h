@@ -1,5 +1,7 @@
 #pragma once
 
+#include <nanodbc.h>
+
 typedef void (*MENU_HADLER)();
 
 struct MENU_OPTION
@@ -9,4 +11,4 @@ struct MENU_OPTION
 	MENU_HADLER handler;
 };
 
-void loginMenu();
+void loginMenu(nanodbc::connection);

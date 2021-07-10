@@ -3,16 +3,26 @@
 
 #include "presentation.h"
 #include "helpers.h"
+#include "userDefine.h"
+#include "userData.h"
 
-void loginMenu()
+void loginMenu(nanodbc::connection connection)
 {
-	std::string username;
-	
-	//std::cout << "Login" << std::endl;
+	USER user;
+
+	std::cout << std::endl;
+
 	std::cout << "username: ";
-	safeCin<std::string>(username);
-	std::cout << username << std::endl;
+	safeCin<std::string>(user.username);
+
 	std::cout << "password: ";
+	user.password = inputPassword();
+
+	user = findUserByUsernameAndPassword(connection, user);
+
+	std::cout << std::endl;
+
+	user.showUser(user);
 }
 
 

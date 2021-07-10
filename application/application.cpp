@@ -18,8 +18,10 @@ int main()
 
         nanodbc::connection conn(connstr);
 
-        //USER user;
-        //user.addUser(conn);
+        USER user;
+        user.addUser(conn);
+
+        loginMenu(conn);
 
         return EXIT_SUCCESS;
     }
