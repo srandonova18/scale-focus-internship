@@ -257,3 +257,37 @@ void editFirstNameMenu(nanodbc::connection connection, USER& user, const USER& c
 
 	editUserMenu(connection, user, currentUser);
 }
+
+void editLastName(nanodbc::connection connection, std::string lastName, const USER& user, const USER& currentUser)
+{
+	nanodbc::statement statement(connection);
+
+	nanodbc::prepare(statement, NANODBC_TEXT(R"(
+		UPDATE 
+			[project_management_application].[dbo].[users]
+		SET
+			last_name = ?,
+			[date_of_last_change] = getdate()
+		WHERE
+			id = ?	
+	)"));
+
+	statement.bind(0, lastName.c_str());
+	statement.bind(1, &user.id);
+
+	execute(statement);
+}
+
+void editLastNameMenu(nanodbc::connection connection, USER& user, const USER& currentUser)
+{
+	std::string newLastName;
+
+	std::cout << std::endl << "Enter new last name: ";
+	newLastName = inputName();
+
+	editLastName(connection, newLastName, user, currentUser);
+
+	std::cout << std::endl << "The last name was edited successfully." << std::endl;
+
+	editUserMenu(connection, user, currentUser);
+}

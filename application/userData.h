@@ -26,3 +26,7 @@ void editPasswordMenu(nanodbc::connection connection, USER& user, const USER& cu
 void editFirstName(nanodbc::connection, std::string, const USER&, const USER&);
 
 void editFirstNameMenu(nanodbc::connection connection, USER& user, const USER& currentUser);
+
+void editLastName(nanodbc::connection, std::string, const USER&, const USER&);
+
+void editLastNameMenu(nanodbc::connection connection, USER& user, const USER& currentUser);
