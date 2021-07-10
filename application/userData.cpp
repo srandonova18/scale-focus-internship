@@ -171,7 +171,6 @@ void editUsername(nanodbc::connection connection, std::string username, const US
 	)"));
 
 	statement.bind(0, username.c_str());
-	//statement.bind(1, &currentUser.id);
 	statement.bind(1, &user.id);
 
 	execute(statement);
@@ -187,6 +186,40 @@ void editUsernameMenu(nanodbc::connection connection, USER& user, const USER& cu
 	editUsername(connection, newUsername, user, currentUser);
 
 	std::cout << "The username was edited successfully." << std::endl;
+
+	editUserMenu(connection, user, currentUser);
+}
+
+void editPassword(nanodbc::connection connection, std::string password, const USER& user, const USER& currentUser)
+{
+	nanodbc::statement statement(connection);
+
+	nanodbc::prepare(statement, NANODBC_TEXT(R"(
+		UPDATE 
+			[project_management_application].[dbo].[users]
+		SET
+			password = ?,
+			[date_of_last_change] = getdate()
+		WHERE
+			id = ?	
+	)"));
+
+	statement.bind(0, password.c_str());
+	statement.bind(1, &user.id);
+
+	execute(statement);
+}
+
+void editPasswordMenu(nanodbc::connection connection, USER& user, const USER& currentUser)
+{
+	std::string newPassword;
+
+	std::cout << std::endl << "Enter new password: ";
+	newPassword = inputPassword();
+
+	editPassword(connection, newPassword, user, currentUser);
+
+	std::cout << std::endl << "The password was edited successfully." << std::endl;
 
 	editUserMenu(connection, user, currentUser);
 }

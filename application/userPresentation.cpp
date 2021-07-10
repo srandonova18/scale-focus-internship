@@ -36,7 +36,7 @@ std::vector<MENU_OPTION_USER> initializeEditUserMenuOptions()
 	std::vector<MENU_OPTION_USER> menu =
 	{
 		{1, ". Username", editUsernameMenu},
-		{2, ". Password", },
+		{2, ". Password", editPasswordMenu},
 		{3, ". First name",},
 		{4, ". Last name",}
 	};
