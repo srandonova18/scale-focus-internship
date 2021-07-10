@@ -8,6 +8,9 @@
 typedef void (*MENU_HADLER_CONST_USER)(nanodbc::connection connection, const USER& user, const USER& currentUser);
 typedef void (*MENU_HADLER_USER)(nanodbc::connection connection, USER& user, const USER& currentUser);
 
+typedef void (*MENU_HADLER_CONST_TEAM)(nanodbc::connection connection, const TEAM& team, const USER& currentUser);
+typedef void (*MENU_HADLER_TEAM)(nanodbc::connection connection, TEAM& team, const USER& currentUser);
+
 struct MENU_OPTION_CONST_USER
 {
 	int number = 0;
@@ -20,6 +23,20 @@ struct MENU_OPTION_USER
 	int number = 0;
 	const char* message;
 	MENU_HADLER_USER handler;
+};
+
+struct MENU_OPTION_CONST_TEAM
+{
+	int number = 0;
+	const char* message;
+	MENU_HADLER_CONST_TEAM handler;
+};
+
+struct MENU_OPTION_TEAM
+{
+	int number = 0;
+	const char* message;
+	MENU_HADLER_TEAM handler;
 };
 
 template <class T>
@@ -52,4 +69,8 @@ void showMenuOptions(std::vector<T>& options)
 }
 
 void handleUserChoiceUser(std::vector<MENU_OPTION_USER>&, nanodbc::connection, USER&, const USER&);
+
+void handleUserChoiceConstTeam(std::vector<MENU_OPTION_CONST_TEAM>&, nanodbc::connection, const TEAM&, const USER&);
+
+void handleUserChoiceTeam(std::vector<MENU_OPTION_TEAM>&, nanodbc::connection, TEAM&, const USER&);
 

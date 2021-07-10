@@ -25,6 +25,7 @@ int main()
 
         if (isAdmin(user))
             userManagementView(conn, user, user);
+           
 
         //showUser(user);
 
