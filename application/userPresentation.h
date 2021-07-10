@@ -4,5 +4,5 @@
 
 std::vector<MENU_OPTION> initializeUserManagementViewMenuOptions();
 
-void userManagementView();
+void userManagementView(nanodbc::connection, const USER&);
 

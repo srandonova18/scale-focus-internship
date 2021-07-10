@@ -12,3 +12,4 @@ std::string inputPassword();
 void insertUser(nanodbc::connection, const USER&, USER);
 
 USER findUserByUsernameAndPassword(nanodbc::connection, const USER&);
+

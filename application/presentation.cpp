@@ -20,11 +20,12 @@ USER loginMenu(nanodbc::connection connection)
 
 	currentUser = findUserByUsernameAndPassword(connection, currentUser);
 
-	//std::cout << std::endl;
-
-	//currentUser.showUser(currentUser);
-
 	return currentUser;
+}
+
+bool isAdmin(USER currentUser)
+{
+	return currentUser.id == 1;
 }
 
 

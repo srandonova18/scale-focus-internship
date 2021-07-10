@@ -18,7 +18,7 @@ void showMenuOptions(std::vector<MENU_OPTION>& options)
 	}
 }
 
-void handleUserChoice(std::vector<MENU_OPTION>& options)
+void handleUserChoice(std::vector<MENU_OPTION>& options, nanodbc::connection connection, const USER& user)
 {
 	char choice;
 
@@ -27,7 +27,10 @@ void handleUserChoice(std::vector<MENU_OPTION>& options)
 
 	for (size_t i = 0; i < options.size(); i++)
 	{
-		options.at(i).handler();
+		if (choice == options.at(i).number)
+		{
+			options.at(i).handler(connection, user);
+		}
 	}
 }
 

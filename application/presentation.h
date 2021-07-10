@@ -4,7 +4,7 @@
 
 #include "userDefine.h"
 
-typedef void (*MENU_HADLER)();
+typedef void (*MENU_HADLER)(nanodbc::connection connection, USER currentUser);
 
 struct MENU_OPTION
 {
@@ -14,3 +14,5 @@ struct MENU_OPTION
 };
 
 USER loginMenu(nanodbc::connection);
+
+bool isAdmin(USER);

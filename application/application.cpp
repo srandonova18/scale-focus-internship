@@ -23,7 +23,10 @@ int main()
 
         user = loginMenu(conn);
 
-        user.showUser(user);
+        if (isAdmin)
+            userManagementView(conn, user);
+
+        //showUser(user);
 
         //user.addUser(conn, user);
 

@@ -4,8 +4,9 @@
 #include "userDefine.h"
 #include "userData.h"
 #include "helpers.h"
+#include "userPresentation.h"
 
-void USER::addUser(nanodbc::connection connection, USER currentUser)
+void addUser(nanodbc::connection connection, USER currentUser)
 {
 	USER newUser;
 
@@ -22,9 +23,13 @@ void USER::addUser(nanodbc::connection connection, USER currentUser)
 	newUser.password = inputPassword();
 
 	insertUser(connection, newUser, currentUser);
+
+	std::cout << "The new user has been registered in the system." << std::endl;
+
+	userManagementView(connection, currentUser);
 }
 
-void USER::showUser(USER user)
+void showUser(USER user)
 {
 	std::cout << std::endl << "Id: " << user.id << std::endl;
 	std::cout << "First name: " << user.firstName << std::endl;

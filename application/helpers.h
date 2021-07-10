@@ -21,5 +21,4 @@ bool safeCin(T& data)
 
 void showMenuOptions(std::vector<MENU_OPTION>&);
 
-
-void handleUserChoice(std::vector<MENU_OPTION>&);
+void handleUserChoice(std::vector<MENU_OPTION>&, nanodbc::connection connection, const USER& user);

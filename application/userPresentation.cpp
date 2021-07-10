@@ -11,22 +11,22 @@ std::vector<MENU_OPTION> initializeUserManagementViewMenuOptions()
 {
 	std::vector<MENU_OPTION> menu =
 	{
-		{1, ".Create new user",},
+		{1, ".Create new user", addUser},
 		{2, ".Edit user", },
 		{3, ".Delete user",},
-		{4, "View all users"}
+		{4, ".View all users"}
 	};
 
 	return menu;
 }
 
-void userManagementView()
+void userManagementView(nanodbc::connection connection, const USER& user)
 {
 	USER newUser;
 	std::vector<MENU_OPTION> options = initializeUserManagementViewMenuOptions();
 
 	showMenuOptions(options);
-	handleUserChoice(options);
+	handleUserChoice(options, connection, user);
 
 
 	/*std::cout << "USER MENU" << std::endl;

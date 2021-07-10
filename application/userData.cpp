@@ -77,9 +77,7 @@ USER findUserByUsernameAndPassword(nanodbc::connection connection, const USER& u
 	{
 		foundUser.id = result.get<int>("id");
 		foundUser.username = result.get<nanodbc::string>("username", "");
-
 		foundUser.password = result.get<nanodbc::string>("password", "");
-
 		foundUser.firstName = result.get<nanodbc::string>("first_name", "");
 		foundUser.lastName = result.get<nanodbc::string>("last_name", "");
 		foundUser.dateOfCreation = result.get<nanodbc::date>("date_of_creation");
