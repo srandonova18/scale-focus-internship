@@ -14,7 +14,7 @@ std::vector<MENU_OPTION_TEAM> initializeTeamManagementViewMenuOptions()
 		{1, ". Create new team", addTeam},
 		{2, ". Edit team",},
 		{3, ". Delete team",},
-		{4, ". View all teams",}
+		{4, ". View all teams", getAllTeams}
 	};
 
 	return menu;

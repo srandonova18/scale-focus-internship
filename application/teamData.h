@@ -10,4 +10,6 @@
 
 void insertTeam(nanodbc::connection, const TEAM&, const USER&);
 
+void getAllTeams(nanodbc::connection, TEAM&, const USER&);
+
 

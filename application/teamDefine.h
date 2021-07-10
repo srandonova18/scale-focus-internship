@@ -16,5 +16,7 @@ struct TEAM
 	bool isDeleted = false;
 };
 
-void addTeam(nanodbc::connection connection, TEAM& team, const USER& currentUser);
+void addTeam(nanodbc::connection, TEAM&, const USER&);
+
+void showTeam(TEAM);
 
