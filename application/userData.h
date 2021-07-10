@@ -9,8 +9,12 @@ std::string inputName();
 
 std::string inputPassword();
 
-void insertUser(nanodbc::connection, const USER&, USER);
+void insertUser(nanodbc::connection, const USER&, const USER&);
 
 USER findUserByUsernameAndPassword(nanodbc::connection, const USER&);
 
-void getAllUsers(nanodbc::connection connection, const USER& user);
+void getAllUsers(nanodbc::connection, USER&, const USER&);
+
+void editUsername(nanodbc::connection, std::string, const USER&, const USER&);
+
+void editUsernameMenu(nanodbc::connection, USER&, const USER&);

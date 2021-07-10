@@ -17,6 +17,6 @@ struct USER
 	bool isDeleted = false;
 };
 
-void addUser(nanodbc::connection, const USER&);
+void addUser(nanodbc::connection connection, USER& newUser, const USER& currentUser);
 
 void showUser(USER);
