@@ -8,12 +8,12 @@
 #include "presentation.h"
 #include "userData.h"
 
-std::vector<MENU_OPTION> initializeUserManagementViewMenuOptions()
+std::vector<MENU_OPTION_USER> initializeUserManagementViewMenuOptions()
 {
-	std::vector<MENU_OPTION> menu =
+	std::vector<MENU_OPTION_USER> menu =
 	{
 		{1, ".Create new user", addUser},
-		{2, ".Edit user", },
+		{2, ".Edit user", editUserMenu},
 		{3, ".Delete user",},
 		{4, ".View all users", getAllUsers}
 	};
@@ -21,22 +21,38 @@ std::vector<MENU_OPTION> initializeUserManagementViewMenuOptions()
 	return menu;
 }
 
-void userManagementView(nanodbc::connection connection, const USER& user)
+void userManagementView(nanodbc::connection connection, USER& user, const USER& currentUser)
 {
-	USER newUser;
-	std::vector<MENU_OPTION> options = initializeUserManagementViewMenuOptions();
+	std::vector<MENU_OPTION_USER> options = initializeUserManagementViewMenuOptions();
 
-	showMenuOptions(options);
-	handleUserChoice(options, connection, user);
-
-
-	/*std::cout << "USER MENU" << std::endl;
-
-	newUser = newUser.addUser();
-
-	newUser.showUser(newUser);*/
-
-
+	showMenuOptionsUser(options);
+	handleUserChoiceUser(options, connection, user, currentUser);
 }
+
+std::vector<MENU_OPTION_USER> initializeEditUserMenuOptions()
+{
+	std::vector<MENU_OPTION_USER> menu =
+	{
+		{1, ".Username", editUsernameMenu},
+		{2, ".Password", },
+		{3, ".First name",},
+		{4, ".Last name",}
+	};
+
+	return menu;
+}
+
+void editUserMenu(nanodbc::connection connection, USER& user, const USER& currentUser)
+{
+	std::vector<MENU_OPTION_USER> options = initializeEditUserMenuOptions();
+
+	std::cout << "Enter user id: ";
+	std::cin >> user.id;
+
+	showMenuOptionsUser(options);
+	handleUserChoiceUser(options, connection, user, currentUser);
+}
+
+
 
 
