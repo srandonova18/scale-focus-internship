@@ -27,7 +27,7 @@ void userManagementView(nanodbc::connection connection, USER& user, const USER& 
 
 	std::cout << std::endl;
 
-	showMenuOptionsUser(options);
+	showMenuOptions<MENU_OPTION_USER>(options);
 	handleUserChoiceUser(options, connection, user, currentUser);
 }
 
@@ -51,7 +51,7 @@ void editUserMenu(nanodbc::connection connection, USER& user, const USER& curren
 	std::cout << std::endl << "Enter user id: ";
 	std::cin >> user.id;
 
-	showMenuOptionsUser(options);
+	showMenuOptions< MENU_OPTION_USER>(options);
 	handleUserChoiceUser(options, connection, user, currentUser);
 }
 

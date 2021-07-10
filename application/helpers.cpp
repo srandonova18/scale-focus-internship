@@ -8,19 +8,7 @@
 #include "userDefine.h"
 #include "presentation.h"
 
-void showMenuOptions(std::vector<MENU_OPTION>& options)
-{
-	std::cout << std::endl;
-
-	for (size_t i = 0; i < options.size(); i++)
-	{
-		std::cout << options.at(i).number;
-		std::cout << options.at(i).message;
-		std::cout << std::endl;
-	}
-}
-
-void handleUserChoice(std::vector<MENU_OPTION>& options, nanodbc::connection connection, const USER& user, const USER& currentUser)
+void handleUserChoiceConstUser(std::vector<MENU_OPTION_CONST_USER>& options, nanodbc::connection connection, const USER& user, const USER& currentUser)
 {
 	int choice;
 
@@ -33,18 +21,6 @@ void handleUserChoice(std::vector<MENU_OPTION>& options, nanodbc::connection con
 		{
 			options.at(i).handler(connection, user, currentUser);
 		}
-	}
-}
-
-void showMenuOptionsUser(std::vector<MENU_OPTION_USER>& options)
-{
-	std::cout << std::endl;
-
-	for (size_t i = 0; i < options.size(); i++)
-	{
-		std::cout << options.at(i).number;
-		std::cout << options.at(i).message;
-		std::cout << std::endl;
 	}
 }
 
@@ -63,5 +39,7 @@ void handleUserChoiceUser(std::vector<MENU_OPTION_USER>& options, nanodbc::conne
 		}
 	}
 }
+
+
 
 

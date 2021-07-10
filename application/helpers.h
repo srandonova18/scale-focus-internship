@@ -5,14 +5,14 @@
 
 #include "presentation.h"
 
-typedef void (*MENU_HADLER)(nanodbc::connection connection, const USER& user, const USER& currentUser);
+typedef void (*MENU_HADLER_CONST_USER)(nanodbc::connection connection, const USER& user, const USER& currentUser);
 typedef void (*MENU_HADLER_USER)(nanodbc::connection connection, USER& user, const USER& currentUser);
 
-struct MENU_OPTION
+struct MENU_OPTION_CONST_USER
 {
 	int number = 0;
 	const char* message;
-	MENU_HADLER handler;
+	MENU_HADLER_CONST_USER handler;
 };
 
 struct MENU_OPTION_USER
@@ -36,10 +36,20 @@ bool safeCin(T& data)
 	return true;
 };
 
-void showMenuOptions(std::vector<MENU_OPTION>&);
+void handleUserChoiceConstUser(std::vector<MENU_OPTION_CONST_USER>&, nanodbc::connection, const USER&, const USER&);
 
-void handleUserChoice(std::vector<MENU_OPTION>&, nanodbc::connection, const USER&, const USER&);
+template <class T>
+void showMenuOptions(std::vector<T>& options)
+{
+	std::cout << std::endl;
 
-void showMenuOptionsUser(std::vector<MENU_OPTION_USER>&);
+	for (size_t i = 0; i < options.size(); i++)
+	{
+		std::cout << options.at(i).number;
+		std::cout << options.at(i).message;
+		std::cout << std::endl;
+	}
+}
 
 void handleUserChoiceUser(std::vector<MENU_OPTION_USER>&, nanodbc::connection, USER&, const USER&);
+
