@@ -30,7 +30,7 @@ std::string inputPassword()
 	return password;
 }
 
-void insertUser(nanodbc::connection connection, const USER& user)
+void insertUser(nanodbc::connection connection, const USER& user, USER currentUser)
 {
 	nanodbc::statement statement(connection);
 
@@ -44,14 +44,12 @@ void insertUser(nanodbc::connection connection, const USER& user)
 		(?, ?, ?, ?, ?, ?)
 	)"));
 
-	int mockId = 1;
-
 	statement.bind(0, user.username.c_str());
 	statement.bind(1, user.password.c_str());
 	statement.bind(2, user.firstName.c_str());
 	statement.bind(3, user.lastName.c_str());
-	statement.bind(4, &mockId);
-	statement.bind(5, &mockId);
+	statement.bind(4, &currentUser.id);
+	statement.bind(5, &currentUser.id);
 
 	execute(statement);
 }

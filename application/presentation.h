@@ -2,6 +2,8 @@
 
 #include <nanodbc.h>
 
+#include "userDefine.h"
+
 typedef void (*MENU_HADLER)();
 
 struct MENU_OPTION
@@ -11,4 +13,4 @@ struct MENU_OPTION
 	MENU_HADLER handler;
 };
 
-void loginMenu(nanodbc::connection);
+USER loginMenu(nanodbc::connection);

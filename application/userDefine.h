@@ -16,8 +16,6 @@ struct USER
 	int lastChangerId = 0;
 	bool isDeleted = false;
 
-	void addUser(nanodbc::connection);
+	void addUser(nanodbc::connection, USER);
 	void showUser(USER);
 };
-
-void insertUser(nanodbc::connection connection, const USER& user);

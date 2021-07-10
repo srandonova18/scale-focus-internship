@@ -6,23 +6,25 @@
 #include "userDefine.h"
 #include "userData.h"
 
-void loginMenu(nanodbc::connection connection)
+USER loginMenu(nanodbc::connection connection)
 {
-	USER user;
+	USER currentUser;
 
 	std::cout << std::endl;
 
 	std::cout << "username: ";
-	safeCin<std::string>(user.username);
+	safeCin<std::string>(currentUser.username);
 
 	std::cout << "password: ";
-	user.password = inputPassword();
+	currentUser.password = inputPassword();
 
-	user = findUserByUsernameAndPassword(connection, user);
+	currentUser = findUserByUsernameAndPassword(connection, currentUser);
 
-	std::cout << std::endl;
+	//std::cout << std::endl;
 
-	user.showUser(user);
+	//currentUser.showUser(currentUser);
+
+	return currentUser;
 }
 
 

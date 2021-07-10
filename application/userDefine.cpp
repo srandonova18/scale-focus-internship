@@ -5,13 +5,13 @@
 #include "userData.h"
 #include "helpers.h"
 
-void USER::addUser(nanodbc::connection connection)
+void USER::addUser(nanodbc::connection connection, USER currentUser)
 {
 	USER newUser;
 
-	std::cout << "first name: ";
+	std::cout << std::endl << "first name: ";
 	newUser.firstName = inputName();
-	
+
 	std::cout << "last name: ";
 	newUser.lastName = inputName();
 
@@ -21,7 +21,7 @@ void USER::addUser(nanodbc::connection connection)
 	std::cout << "password: ";
 	newUser.password = inputPassword();
 
-	insertUser(connection, newUser);
+	insertUser(connection, newUser, currentUser);
 }
 
 void USER::showUser(USER user)
