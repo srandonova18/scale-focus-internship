@@ -10,6 +10,8 @@
 
 void showMenuOptions(std::vector<MENU_OPTION>& options)
 {
+	std::cout << std::endl;
+
 	for (size_t i = 0; i < options.size(); i++)
 	{
 		std::cout << options.at(i).number;
@@ -20,7 +22,7 @@ void showMenuOptions(std::vector<MENU_OPTION>& options)
 
 void handleUserChoice(std::vector<MENU_OPTION>& options, nanodbc::connection connection, const USER& user)
 {
-	char choice;
+	int choice;
 
 	std::cout << "Enter your choice: ";
 	std::cin >> choice;
