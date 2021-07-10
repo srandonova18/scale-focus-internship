@@ -39,6 +39,9 @@
     <ClCompile Include="teamData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="teamPresentation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="presentation.h">

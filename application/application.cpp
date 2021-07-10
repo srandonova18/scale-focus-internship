@@ -7,6 +7,8 @@
 #include "helpers.h"
 #include "userPresentation.h"
 #include "userDefine.h"
+#include "teamPresentation.h"
+#include "teamDefine.h"
 
 using namespace std;
 
@@ -19,12 +21,14 @@ int main()
         nanodbc::connection conn(connstr);
 
         USER user;
+        TEAM team;
         //user.addUser(conn);
 
         user = loginMenu(conn);
 
         if (isAdmin(user))
-            userManagementView(conn, user, user);
+            //userManagementView(conn, user, user);
+            teamManagementView(conn, team, user);
            
 
         //showUser(user);
