@@ -181,7 +181,7 @@ void editUsernameMenu(nanodbc::connection connection, USER& user, const USER& cu
 {
 	std::string newUsername;
 
-	std::cout << "Enter new username: ";
+	std::cout << std::endl << "Enter new username: ";
 	newUsername = inputName();
 
 	editUsername(connection, newUsername, user, currentUser);

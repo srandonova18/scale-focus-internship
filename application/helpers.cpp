@@ -24,9 +24,9 @@ void handleUserChoice(std::vector<MENU_OPTION>& options, nanodbc::connection con
 {
 	int choice;
 
-	std::cout << "Enter your choice: ";
+	std::cout << std::endl << "Enter your choice: ";
 	std::cin >> choice;
-
+	
 	for (size_t i = 0; i < options.size(); i++)
 	{
 		if (choice == options.at(i).number)
@@ -52,7 +52,7 @@ void handleUserChoiceUser(std::vector<MENU_OPTION_USER>& options, nanodbc::conne
 {
 	int choice;
 
-	std::cout << "Enter your choice: ";
+	std::cout << std::endl << "Enter your choice: ";
 	std::cin >> choice;
 
 	for (size_t i = 0; i < options.size(); i++)

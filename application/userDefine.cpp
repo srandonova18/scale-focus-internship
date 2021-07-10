@@ -8,21 +8,21 @@
 
 void addUser(nanodbc::connection connection, USER& newUser, const USER& currentUser)
 {
-	std::cout << std::endl << "first name: ";
+	std::cout << std::endl << "Enter first name: ";
 	newUser.firstName = inputName();
 
-	std::cout << "last name: ";
+	std::cout << std::endl << "Enter last name: ";
 	newUser.lastName = inputName();
 
-	std::cout << "username: ";
+	std::cout << std::endl << "Enter username: ";
 	newUser.username = inputName();
 
-	std::cout << "password: ";
+	std::cout << std:: endl << "Enter password: ";
 	newUser.password = inputPassword();
 
 	insertUser(connection, newUser, currentUser);
 
-	std::cout << std::endl << "The new user has been registered in the system." << std::endl;
+	std::cout << std::endl << std::endl << "The new user has been registered in the system." << std::endl;
 
 	userManagementView(connection, newUser, currentUser);
 }
