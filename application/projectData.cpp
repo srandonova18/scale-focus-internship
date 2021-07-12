@@ -54,3 +54,25 @@ void getAllProjects(nanodbc::connection connection, PROJECT& project, const USER
 	projectManagementView(connection, project, currentUser);
 }
 
+void editTitle(nanodbc::connection connection, std::string title, const PROJECT& project, const USER& currentUser)
+{
+	nanodbc::statement statement(connection);
+
+	nanodbc::prepare(statement, NANODBC_TEXT(R"(
+		UPDATE 
+			[project_management_application].[dbo].[projects]
+		SET
+			title = ?,
+			[date_of_last_change] = getdate()
+			last_changer_id = ?
+		WHERE
+			id = ?	
+	)"));
+
+	statement.bind(0, title.c_str());
+	statement.bind(1, &project.id);
+	statement.bind(2, &currentUser.id);
+
+	execute(statement);
+}
+
