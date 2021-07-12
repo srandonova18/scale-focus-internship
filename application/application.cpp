@@ -20,7 +20,7 @@ int main()
 
         nanodbc::connection conn(connstr);
 
-        USER user;
+        USER user, user1;
         TEAM team;
         //user.addUser(conn);
 
@@ -28,7 +28,8 @@ int main()
 
         if (isAdmin(user))
             //userManagementView(conn, user, user);
-            teamManagementView(conn, team, user);
+            //teamManagementView(conn, team, user);
+            mainMenu(conn, user1, team, user);
            
 
         //showUser(user);

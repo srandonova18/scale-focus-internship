@@ -72,4 +72,20 @@ void handleUserChoiceTeam(std::vector<MENU_OPTION_TEAM>& options, nanodbc::conne
 	}
 }
 
+void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser)
+{
+	int choice;
+
+	std::cout << std::endl << "Enter your choice: ";
+	std::cin >> choice;
+
+	for (size_t i = 0; i < options.size(); i++)
+	{
+		if (choice == options.at(i).number)
+		{
+			options.at(i).handler(connection, user, team, currentUser);
+		}
+	}
+}
+
 
