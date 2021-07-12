@@ -68,5 +68,8 @@
     <ClInclude Include="teamPresentation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="projectDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
