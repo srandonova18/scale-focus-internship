@@ -12,3 +12,5 @@ void insertProject(nanodbc::connection, const PROJECT&, const USER&);
 void getAllProjects(nanodbc::connection, PROJECT&, const USER&);
 
 void editTitle(nanodbc::connection, std::string, const PROJECT&, const USER&);
+
+void editDescription(nanodbc::connection connection, std::string, const PROJECT&, const USER&);
