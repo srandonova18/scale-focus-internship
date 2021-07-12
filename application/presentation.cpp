@@ -41,7 +41,7 @@ void teamManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM&
 	teamManagementView(connection, team, currentUser);
 }
 
-std::vector<MENU_OPTION_VIEW> initializeMainMenuOptions()
+std::vector<MENU_OPTION_VIEW> initializeMainMenuAdminOptions()
 {
 	std::vector<MENU_OPTION_VIEW> menu =
 	{
@@ -52,13 +52,17 @@ std::vector<MENU_OPTION_VIEW> initializeMainMenuOptions()
 	return menu;
 }
 
-void mainMenu(nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser)
+void mainMenuAdmin(nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser)
 {
-	std::vector<MENU_OPTION_VIEW> options = initializeMainMenuOptions();
+	std::vector<MENU_OPTION_VIEW> options = initializeMainMenuAdminOptions();
 
 	showMenuOptions<MENU_OPTION_VIEW>(options);
 	handleUserChoiceView(options, connection, user, team, currentUser);
 }
+
+
+
+
 
 
 

@@ -8,6 +8,7 @@
 #include "userPresentation.h"
 #include "userDefine.h"
 #include "teamPresentation.h"
+#include "projectPresentation.h"
 #include "teamDefine.h"
 
 using namespace std;
@@ -22,14 +23,23 @@ int main()
 
         USER user, user1;
         TEAM team;
+        PROJECT project;
         //user.addUser(conn);
 
         user = loginMenu(conn);
 
         if (isAdmin(user))
+        {
             //userManagementView(conn, user, user);
             //teamManagementView(conn, team, user);
-            mainMenu(conn, user1, team, user);
+            //mainMenuAdmin(conn, user1, team, user);
+        }
+        else
+        {
+            projectManagementView(conn, project, user);
+        }
+            
+
            
 
         //showUser(user);

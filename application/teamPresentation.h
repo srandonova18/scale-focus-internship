@@ -13,7 +13,7 @@ std::vector<MENU_OPTION_TEAM> initializeEditTeamMenuOptions();
 
 void editTeamMenu(nanodbc::connection, TEAM&, const USER&);
 
-void mainMenuToTeamWrapper(nanodbc::connection connection, TEAM& team, const USER& currentUser);
+void mainMenuAdminToTeamWrapper(nanodbc::connection connection, TEAM& team, const USER& currentUser);
 
 
 

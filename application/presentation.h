@@ -11,10 +11,10 @@ USER loginMenu(nanodbc::connection);
 
 bool isAdmin(const USER&);
 
-std::vector<MENU_OPTION_VIEW> initializeMainMenuOptions();
+std::vector<MENU_OPTION_VIEW> initializeMainMenuAdminOptions();
 
 void teamManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser);
 
 void userManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser);
 
-void mainMenu(nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser);
+void mainMenuAdmin(nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser);

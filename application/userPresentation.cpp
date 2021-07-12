@@ -16,17 +16,17 @@ std::vector<MENU_OPTION_USER> initializeUserManagementViewMenuOptions()
 		{2, ". Edit user", editUserMenu},
 		{3, ". Delete user",},
 		{4, ". View all users", getAllUsers},
-		{5, ". Return to main menu", mainMenuToUserWrapper}
+		{5, ". Return to main menu", mainMenuAdminToUserWrapper}
 	};
 
 	return menu;
 }
 
-void mainMenuToUserWrapper(nanodbc::connection connection, USER& user, const USER& currentUser)
+void mainMenuAdminToUserWrapper(nanodbc::connection connection, USER& user, const USER& currentUser)
 {
 	TEAM team;
 
-	mainMenu(connection, user, team, currentUser);
+	mainMenuAdmin(connection, user, team, currentUser);
 }
 
 void userManagementView(nanodbc::connection connection, USER& user, const USER& currentUser)
