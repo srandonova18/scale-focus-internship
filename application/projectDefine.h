@@ -3,6 +3,8 @@
 #include <iostream>
 #include <nanodbc.h>
 
+#include "userDefine.h"
+
 struct PROJECT
 {
 	int id = 0;
@@ -15,4 +17,6 @@ struct PROJECT
 	int lastChangerId = 0;
 	bool isDeleted = false;
 };
+
+void addProject(nanodbc::connection, PROJECT&, const USER&);
 

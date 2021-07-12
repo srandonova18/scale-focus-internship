@@ -145,6 +145,8 @@
     <ClCompile Include="application.cpp" />
     <ClCompile Include="helpers.cpp" />
     <ClCompile Include="presentation.cpp" />
+    <ClCompile Include="projectData.cpp" />
+    <ClCompile Include="projectDefine.cpp" />
     <ClCompile Include="teamData.cpp" />
     <ClCompile Include="teamDefine.cpp" />
     <ClCompile Include="teamPresentation.cpp" />
@@ -155,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="helpers.h" />
     <ClInclude Include="presentation.h" />
+    <ClInclude Include="projectData.h" />
     <ClInclude Include="projectDefine.h" />
     <ClInclude Include="teamData.h" />
     <ClInclude Include="teamDefine.h" />

@@ -42,6 +42,12 @@
     <ClCompile Include="teamPresentation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="projectDefine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="presentation.h">
@@ -69,6 +75,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="projectDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="projectData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
