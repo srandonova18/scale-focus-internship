@@ -32,15 +32,13 @@ int main()
         {
             //userManagementView(conn, user, user);
             //teamManagementView(conn, team, user);
-            //mainMenuAdmin(conn, user1, team, user);
+            mainMenuAdmin(conn, user1, team, project, user);
         }
         else
         {
-            projectManagementView(conn, project, user);
+            //projectManagementView(conn, project, user);
+            mainMenuUser(conn, user1, team, project, user);
         }
-            
-
-           
 
         //showUser(user);
 

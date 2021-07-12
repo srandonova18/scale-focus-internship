@@ -72,7 +72,7 @@ void handleUserChoiceTeam(std::vector<MENU_OPTION_TEAM>& options, nanodbc::conne
 	}
 }
 
-void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser)
+void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser)
 {
 	int choice;
 
@@ -83,7 +83,7 @@ void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::conne
 	{
 		if (choice == options.at(i).number)
 		{
-			options.at(i).handler(connection, user, team, currentUser);
+			options.at(i).handler(connection, user, team, project, currentUser);
 		}
 	}
 }

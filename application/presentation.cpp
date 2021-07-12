@@ -31,12 +31,12 @@ bool isAdmin(const USER& currentUser)
 	return currentUser.id == 1;
 }
 
-void userManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser)
+void userManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser)
 {
 	userManagementView(connection, user, currentUser);
 }
 
-void teamManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser)
+void teamManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser)
 {
 	teamManagementView(connection, team, currentUser);
 }
@@ -52,15 +52,31 @@ std::vector<MENU_OPTION_VIEW> initializeMainMenuAdminOptions()
 	return menu;
 }
 
-void mainMenuAdmin(nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser)
+void mainMenuAdmin(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser)
 {
 	std::vector<MENU_OPTION_VIEW> options = initializeMainMenuAdminOptions();
 
 	showMenuOptions<MENU_OPTION_VIEW>(options);
-	handleUserChoiceView(options, connection, user, team, currentUser);
+	handleUserChoiceView(options, connection, user, team, project, currentUser);
 }
 
+std::vector<MENU_OPTION_VIEW> initializeMainMenuUserOptions()
+{
+	std::vector<MENU_OPTION_VIEW> menu =
+	{
+		{1, ". Project management view"}
+	};
 
+	return menu;
+}
+
+void mainMenuUser(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser)
+{
+	std::vector<MENU_OPTION_VIEW> options = initializeMainMenuUserOptions();
+
+	showMenuOptions<MENU_OPTION_VIEW>(options);
+	handleUserChoiceView(options, connection, user, team, project, currentUser);
+}
 
 
 

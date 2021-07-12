@@ -24,8 +24,9 @@ std::vector<MENU_OPTION_TEAM> initializeTeamManagementViewMenuOptions()
 void mainMenuAdminToTeamWrapper(nanodbc::connection connection, TEAM& team, const USER& currentUser)
 {
 	USER user;
+	PROJECT project;
 
-	mainMenuAdmin(connection, user, team, currentUser);
+	mainMenuAdmin(connection, user, team, project, currentUser);
 }
 
 void teamManagementView(nanodbc::connection connection, TEAM& team, const USER& currentUser)
