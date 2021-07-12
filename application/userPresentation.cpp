@@ -15,10 +15,18 @@ std::vector<MENU_OPTION_USER> initializeUserManagementViewMenuOptions()
 		{1, ". Create new user", addUser},
 		{2, ". Edit user", editUserMenu},
 		{3, ". Delete user",},
-		{4, ". View all users", getAllUsers}
+		{4, ". View all users", getAllUsers},
+		{5, ". Return to main menu", mainMenuToUserWrapper}
 	};
 
 	return menu;
+}
+
+void mainMenuToUserWrapper(nanodbc::connection connection, USER& user, const USER& currentUser)
+{
+	TEAM team;
+
+	mainMenu(connection, user, team, currentUser);
 }
 
 void userManagementView(nanodbc::connection connection, USER& user, const USER& currentUser)
@@ -38,7 +46,8 @@ std::vector<MENU_OPTION_USER> initializeEditUserMenuOptions()
 		{1, ". Username", editUsernameMenu},
 		{2, ". Password", editPasswordMenu},
 		{3, ". First name", editFirstNameMenu},
-		{4, ". Last name", editLastNameMenu}
+		{4, ". Last name", editLastNameMenu},
+		{5, ". Return to user management view", userManagementView}
 	};
 
 	return menu;

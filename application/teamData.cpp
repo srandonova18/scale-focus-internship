@@ -114,5 +114,5 @@ void editTitleMenu(nanodbc::connection connection, TEAM& team, const USER& curre
 
 	std::cout << std::endl << "The title was edited successfully." << std::endl;
 
-	//editTeamMenu(connection, user, currentUser);
+	editTeamMenu(connection, team, currentUser);
 }

@@ -14,10 +14,18 @@ std::vector<MENU_OPTION_TEAM> initializeTeamManagementViewMenuOptions()
 		{1, ". Create new team", addTeam},
 		{2, ". Edit team", editTeamMenu},
 		{3, ". Delete team",},
-		{4, ". View all teams", getAllTeams}
+		{4, ". View all teams", getAllTeams},
+		{5, ". Return to main menu", mainMenuToTeamWrapper}
 	};
 
 	return menu;
+}
+
+void mainMenuToTeamWrapper(nanodbc::connection connection, TEAM& team, const USER& currentUser)
+{
+	USER user;
+
+	mainMenu(connection, user, team, currentUser);
 }
 
 void teamManagementView(nanodbc::connection connection, TEAM& team, const USER& currentUser)
@@ -35,6 +43,7 @@ std::vector<MENU_OPTION_TEAM> initializeEditTeamMenuOptions()
 	std::vector<MENU_OPTION_TEAM> menu =
 	{
 		{1, ". Title", editTitleMenu},
+		{2, ". Return to team management view", teamManagementView}
 	};
 
 	return menu;
