@@ -48,6 +48,9 @@
     <ClCompile Include="projectData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="projectPresentation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="presentation.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="projectData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="projectPresentation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

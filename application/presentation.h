@@ -2,6 +2,7 @@
 
 #include "userDefine.h"
 #include "teamDefine.h"
+#include "projectDefine.h"
 #include "helpers.h"
 
 struct MENU_OPTION_VIEW;

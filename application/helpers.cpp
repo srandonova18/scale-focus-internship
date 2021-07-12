@@ -88,4 +88,20 @@ void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::conne
 	}
 }
 
+void handleUserChoiceProject(std::vector<MENU_OPTION_PROJECT>& options, nanodbc::connection connection, PROJECT& project, const USER& currentUser)
+{
+	int choice;
+
+	std::cout << std::endl << "Enter your choice: ";
+	std::cin >> choice;
+
+	for (size_t i = 0; i < options.size(); i++)
+	{
+		if (choice == options.at(i).number)
+		{
+			options.at(i).handler(connection, project, currentUser);
+		}
+	}
+}
+
 

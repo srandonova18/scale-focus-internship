@@ -13,6 +13,10 @@ typedef void (*MENU_HANDLER_TEAM)(nanodbc::connection connection, TEAM& team, co
 
 typedef void (*MENU_HANDLER_VIEW)(nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser);
 
+typedef void (*MENU_HANDLER_CONST_PROJECT)(nanodbc::connection connection, const PROJECT& team, const USER& currentUser);
+typedef void (*MENU_HANDLER_PROJECT)(nanodbc::connection connection, PROJECT& team, const USER& currentUser);
+
+
 struct MENU_OPTION_CONST_USER
 {
 	int number = 0;
@@ -46,6 +50,20 @@ struct MENU_OPTION_VIEW
 	int number = 0;
 	const char* message;
 	MENU_HANDLER_VIEW handler;
+};
+
+struct MENU_OPTION_CONST_PROJECT
+{
+	int number = 0;
+	const char* message;
+	MENU_HANDLER_CONST_PROJECT handler;
+};
+
+struct MENU_OPTION_PROJECT
+{
+	int number = 0;
+	const char* message;
+	MENU_HANDLER_PROJECT handler;
 };
 
 template <class T>
@@ -85,3 +103,4 @@ void handleUserChoiceTeam(std::vector<MENU_OPTION_TEAM>&, nanodbc::connection, T
 
 void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::connection connection, USER& user, TEAM& team, const USER& currentUser);
 
+void handleUserChoiceProject(std::vector<MENU_OPTION_PROJECT>& options, nanodbc::connection connection, PROJECT& project, const USER& currentUser);

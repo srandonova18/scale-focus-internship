@@ -1,6 +1,7 @@
 #include "projectDefine.h"
 #include "userData.h"
 #include "projectData.h"
+#include "projectPresentation.h"
 
 void addProject(nanodbc::connection connection, PROJECT& newProject, const USER& currentUser)
 {
@@ -14,5 +15,5 @@ void addProject(nanodbc::connection connection, PROJECT& newProject, const USER&
 
 	std::cout << std::endl << std::endl << "The new project has been registered in the system." << std::endl;
 
-	//projectManagementView(connection, newproject, currentUser);
+	projectManagementView(connection, newProject, currentUser);
 }
