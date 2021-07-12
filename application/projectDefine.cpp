@@ -17,3 +17,13 @@ void addProject(nanodbc::connection connection, PROJECT& newProject, const USER&
 
 	projectManagementView(connection, newProject, currentUser);
 }
+
+void showProject(PROJECT project)
+{
+	std::cout << std::endl << "Id: " << project.id << std::endl;
+	std::cout << "Title: " << project.title << std::endl;
+	std::cout << "Description: " << project.description << std::endl;
+	std::cout << "Tead Id: " << project.teamId << std::endl;
+	std::cout << "Date of profile creation:  ";
+	std::cout << project.dateOfCreation.day << "/" << project.dateOfCreation.month << "/" << project.dateOfCreation.year << std::endl;
+}

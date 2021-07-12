@@ -20,3 +20,5 @@ struct PROJECT
 
 void addProject(nanodbc::connection, PROJECT&, const USER&);
 
+void showProject(PROJECT);
+

@@ -1,4 +1,5 @@
 #include "projectPresentation.h"
+#include "projectData.h"
 
 std::vector<MENU_OPTION_PROJECT> initializeProjectManagementViewMenuOptions()
 {
@@ -7,7 +8,7 @@ std::vector<MENU_OPTION_PROJECT> initializeProjectManagementViewMenuOptions()
 		{1, ". Create new project", addProject},
 		{2, ". Edit project"},
 		{3, ". Delete project"},
-		{4, ". View all projects"},
+		{4, ". View all projects", getAllProjects},
 		{5, ". Return to main menu", mainMenuUserToProjectWrapper}
 	};
 
