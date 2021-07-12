@@ -8,6 +8,7 @@
 #include "userData.h"
 #include "userPresentation.h"
 #include "teamPresentation.h"
+#include "projectPresentation.h"
 
 USER loginMenu(nanodbc::connection connection)
 {
@@ -64,7 +65,7 @@ std::vector<MENU_OPTION_VIEW> initializeMainMenuUserOptions()
 {
 	std::vector<MENU_OPTION_VIEW> menu =
 	{
-		{1, ". Project management view"}
+		{1, ". Project management view", projectManagementViewWrapper}
 	};
 
 	return menu;
