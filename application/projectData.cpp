@@ -1,5 +1,6 @@
 #include "projectData.h"
 #include "projectPresentation.h"
+#include "userData.h"
 
 void insertProject(nanodbc::connection connection, const PROJECT& project, const USER& currentUser)
 {
@@ -54,7 +55,7 @@ void getAllProjects(nanodbc::connection connection, PROJECT& project, const USER
 	projectManagementView(connection, project, currentUser);
 }
 
-void editTitle(nanodbc::connection connection, std::string title, const PROJECT& project, const USER& currentUser)
+void editProjectTitle(nanodbc::connection connection, std::string title, const PROJECT& project, const USER& currentUser)
 {
 	nanodbc::statement statement(connection);
 
@@ -63,20 +64,20 @@ void editTitle(nanodbc::connection connection, std::string title, const PROJECT&
 			[project_management_application].[dbo].[projects]
 		SET
 			title = ?,
-			[date_of_last_change] = getdate()
+			[date_of_last_change] = getdate(),
 			last_changer_id = ?
 		WHERE
 			id = ?	
 	)"));
 
 	statement.bind(0, title.c_str());
-	statement.bind(1, &project.id);
-	statement.bind(2, &currentUser.id);
+	statement.bind(1, &currentUser.id);
+	statement.bind(2, &project.id);
 
 	execute(statement);
 }
 
-void editDescription(nanodbc::connection connection, std::string description, const PROJECT& project, const USER& currentUser)
+void editProjectDescription(nanodbc::connection connection, std::string description, const PROJECT& project, const USER& currentUser)
 {
 	nanodbc::statement statement(connection);
 
@@ -85,16 +86,45 @@ void editDescription(nanodbc::connection connection, std::string description, co
 			[project_management_application].[dbo].[projects]
 		SET
 			description = ?,
-			[date_of_last_change] = getdate()
+			[date_of_last_change] = getdate(),
 			last_changer_id = ?
 		WHERE
 			id = ?	
 	)"));
 
 	statement.bind(0, description.c_str());
-	statement.bind(1, &project.id);
-	statement.bind(2, &currentUser.id);
+	statement.bind(1, &currentUser.id);
+	statement.bind(2, &project.id);
 
 	execute(statement);
+}
+
+void editProjectTitleMenu(nanodbc::connection connection, PROJECT& project, const USER& currentUser)
+{
+	std::string newTitle;
+
+	std::cout << std::endl << "Enter new title: ";
+	newTitle = inputName();
+
+	editProjectTitle(connection, newTitle, project, currentUser);
+
+	std::cout << std::endl << "The title was edited successfully." << std::endl;
+
+	editProjectMenu(connection, project, currentUser);
+}
+
+
+void editProjectDescriptionMenu(nanodbc::connection connection, PROJECT& project, const USER& currentUser)
+{
+	std::string newDescription;
+
+	std::cout << std::endl << "Enter new description: ";
+	newDescription = inputName();
+
+	editProjectDescription(connection, newDescription, project, currentUser);
+
+	std::cout << std::endl << "The description was edited successfully." << std::endl;
+
+	editProjectMenu(connection, project, currentUser);
 }
 

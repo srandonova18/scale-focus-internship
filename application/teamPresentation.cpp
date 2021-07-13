@@ -43,7 +43,7 @@ std::vector<MENU_OPTION_TEAM> initializeEditTeamMenuOptions()
 {
 	std::vector<MENU_OPTION_TEAM> menu =
 	{
-		{1, ". Title", editTitleMenu},
+		{1, ". Title", editTeamTitleMenu},
 		{2, ". Return to team management view", teamManagementView}
 	};
 

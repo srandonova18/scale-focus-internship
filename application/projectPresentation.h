@@ -10,3 +10,5 @@ void projectManagementView(nanodbc::connection connection, PROJECT& project, con
 void projectManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
 
 void mainMenuUserToProjectWrapper(nanodbc::connection connection, PROJECT& project, const USER& currentUser);
+
+void editProjectMenu(nanodbc::connection connection, PROJECT& project, const USER& currentUser);
