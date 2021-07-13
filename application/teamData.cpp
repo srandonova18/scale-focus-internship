@@ -83,7 +83,7 @@ TEAM findTeamById(nanodbc::connection connection, const TEAM& team)
 	return foundTeam;
 }
 
-void editTitle(nanodbc::connection connection, std::string title, const TEAM& team, const USER& currentUser)
+void editTeamTitle(nanodbc::connection connection, std::string title, const TEAM& team, const USER& currentUser)
 {
 	nanodbc::statement statement(connection);
 
@@ -103,14 +103,14 @@ void editTitle(nanodbc::connection connection, std::string title, const TEAM& te
 	execute(statement);
 }
 
-void editTitleMenu(nanodbc::connection connection, TEAM& team, const USER& currentUser)
+void editTeamTitleMenu(nanodbc::connection connection, TEAM& team, const USER& currentUser)
 {
 	std::string newTitle;
 
 	std::cout << std::endl << "Enter new title name: ";
 	newTitle = inputName();
 
-	editTitle(connection, newTitle, team, currentUser);
+	editTeamTitle(connection, newTitle, team, currentUser);
 
 	std::cout << std::endl << "The title was edited successfully." << std::endl;
 

@@ -14,8 +14,8 @@ void getAllTeams(nanodbc::connection, TEAM&, const USER&);
 
 TEAM findTeamById(nanodbc::connection connection, const TEAM& team);
 
-void editTitle(nanodbc::connection connection, std::string title, const TEAM& team, const USER& currentUser);
+void editTeamTitle(nanodbc::connection connection, std::string title, const TEAM& team, const USER& currentUser);
 
-void editTitleMenu(nanodbc::connection connection, TEAM& team, const USER& currentUser);
+void editTeamTitleMenu(nanodbc::connection connection, TEAM& team, const USER& currentUser);
 
 
