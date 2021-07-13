@@ -33,7 +33,10 @@ void getAllProjects(nanodbc::connection connection, PROJECT& project, const USER
 	SELECT
 		*
 	FROM [project_management_application].[dbo].[projects]
+	WHERE creator_id = ?
 	)"));
+
+	statement.bind(0, &currentUser.id);
 
 	auto result = execute(statement);
 
@@ -67,12 +70,13 @@ void editProjectTitle(nanodbc::connection connection, std::string title, const P
 			[date_of_last_change] = getdate(),
 			last_changer_id = ?
 		WHERE
-			id = ?	
+			id = ?	AND creator_id = ?
 	)"));
 
 	statement.bind(0, title.c_str());
 	statement.bind(1, &currentUser.id);
 	statement.bind(2, &project.id);
+	statement.bind(3, &currentUser.id);
 
 	execute(statement);
 }
@@ -89,12 +93,13 @@ void editProjectDescription(nanodbc::connection connection, std::string descript
 			[date_of_last_change] = getdate(),
 			last_changer_id = ?
 		WHERE
-			id = ?	
+			id = ? AND creator_id = ?
 	)"));
 
 	statement.bind(0, description.c_str());
 	statement.bind(1, &currentUser.id);
 	statement.bind(2, &project.id);
+	statement.bind(3, &currentUser.id);
 
 	execute(statement);
 }
