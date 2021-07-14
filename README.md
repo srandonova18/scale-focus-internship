@@ -6,7 +6,7 @@
    <img src = "https://img.shields.io/github/last-commit/srandonova18/scale-focus-internship?style=for-the-badge">
    <img src = "https://img.shields.io/github/languages/top/srandonova18/scale-focus-internship?style=for-the-badge">
 
-## Creator ☀️
+## Creator 💻
 
 - Stanislava Andonova
 
@@ -15,8 +15,6 @@
 The purpose of the Project Management Application is to help organization of various activities happpening in an IT company.
 
 ### What I used to create the project 💫
-
-Used technologies:
 
 * C++
 
@@ -31,5 +29,5 @@ Used technologies:
 
 Here you can check out the presentation and documentation:
 
-* [Documentation]()
-* [Presentation]()
+* [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/srandonova18_codingburgas_bg/EbPNa2RHLPVOiY05q2KwRK8BSHFte2WvQYG1YCKd0y1ugA?e=uYRocx)
+* [Documentation](https://codingburgas-my.sharepoint.com/:b:/g/personal/srandonova18_codingburgas_bg/ESnOzBnykQNNphUmeHbUEsoBpAeZEkCfTFVURPAEwzVyVw?e=UwbpI4)
