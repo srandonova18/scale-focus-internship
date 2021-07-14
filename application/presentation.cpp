@@ -21,8 +21,6 @@ USER loginMenu(nanodbc::connection connection)
 	std::cout << "\nPassword: ";
 	currentUser.password = inputPassword();
 
-
-
 	currentUser = findUserByUsernameAndPassword(connection, currentUser);
 
 	return currentUser;
@@ -31,6 +29,11 @@ USER loginMenu(nanodbc::connection connection)
 bool isAdmin(const USER& currentUser)
 {
 	return currentUser.id == 1;
+}
+
+bool isRegistered(const USER& potentialUser)
+{
+	return potentialUser.id != 0;
 }
 
 void userManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser)
@@ -78,6 +81,34 @@ void mainMenuUser(nanodbc::connection connection, USER& user, TEAM& team, PROJEC
 
 	showMenuOptions<MENU_OPTION_VIEW>(options);
 	handleUserChoiceView(options, connection, user, team, project, currentUser);
+}
+
+void mainMenu(nanodbc::connection connection)
+{
+	USER currentUser, user;
+	TEAM team;
+	PROJECT project;
+
+	currentUser = loginMenu(connection);
+
+	if (isRegistered(currentUser))
+	{
+		if (isAdmin(currentUser))
+		{
+			mainMenuAdmin(connection, user, team, project, currentUser);
+		}
+		else
+		{
+			mainMenuUser(connection, user, team, project, currentUser);
+		}
+	}
+	else
+	{
+		std::cout << "The username or password is incorrect. ";
+		std::cout << "Please try to login again or refer to the admin to create an account.";
+
+		mainMenu(connection);
+	}
 }
 
 

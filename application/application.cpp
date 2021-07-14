@@ -11,8 +11,6 @@
 #include "projectPresentation.h"
 #include "teamDefine.h"
 
-using namespace std;
-
 int main()
 {
     try
@@ -21,28 +19,7 @@ int main()
 
         nanodbc::connection conn(connstr);
 
-        USER user, user1;
-        TEAM team;
-        PROJECT project;
-        //user.addUser(conn);
-
-        user = loginMenu(conn);
-
-        if (isAdmin(user))
-        {
-            //userManagementView(conn, user, user);
-            //teamManagementView(conn, team, user);
-            mainMenuAdmin(conn, user1, team, project, user);
-        }
-        else
-        {
-            //projectManagementView(conn, project, user);
-            mainMenuUser(conn, user1, team, project, user);
-        }
-
-        //showUser(user);
-
-        //user.addUser(conn, user);
+        mainMenu(conn);
 
         return EXIT_SUCCESS;
     }
