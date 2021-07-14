@@ -11,9 +11,9 @@ struct PROJECT
 	std::string title = "";
 	std::string description = "";
 	int teamId = 0;
-	nanodbc::date dateOfCreation;
+	nanodbc::date dateOfCreation = { 0, 0, 0 };
 	int creatorId = 0;
-	nanodbc::date dateOfLastChange;
+	nanodbc::date dateOfLastChange = { 0, 0, 0 };
 	int lastChangerId = 0;
 	bool isDeleted = false;
 };
