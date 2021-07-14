@@ -54,10 +54,22 @@ void editProjectMenu(nanodbc::connection connection, PROJECT& project, const USE
 {
 	std::vector<MENU_OPTION_PROJECT> options = initializeEditProjectMenuOptions();
 
-	std::cout << std::endl << "Enter project id: ";
-	std::cin >> project.id;
+	int id = 0;
 
-	showMenuOptions<MENU_OPTION_PROJECT>(options);
-	handleUserChoiceProject(options, connection, project, currentUser);
+	std::cout << std::endl << "Enter project id: ";
+	safeCin<int>(id);
+
+	project = getProjectById(connection, id);
+
+	if (isCreator(project, currentUser))
+	{
+		showMenuOptions<MENU_OPTION_PROJECT>(options);
+		handleUserChoiceProject(options, connection, project, currentUser);
+	}
+	else
+	{
+		std::cout << std::endl << "You don't have access to this project." << std::endl;
+		editProjectMenu(connection, project, currentUser);
+	}
 }
 
