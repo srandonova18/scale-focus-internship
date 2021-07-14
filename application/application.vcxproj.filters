@@ -13,6 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\team">
+      <UniqueIdentifier>{110d1ea8-d67b-4ef4-a07e-d6702dc6e631}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\user">
+      <UniqueIdentifier>{d5fe0734-8aa3-40ec-b23d-87441ffaeef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\project">
+      <UniqueIdentifier>{5c5ee5e3-aed8-46d7-a935-1f3d31c1ae2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\user">
+      <UniqueIdentifier>{c90b5cd7-1025-4db1-b48f-ebb9eed65eca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\team">
+      <UniqueIdentifier>{86d8d5eb-29d7-455c-b3dc-1292f87126ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\project">
+      <UniqueIdentifier>{8a5bb634-d27e-40c1-9f35-2f4bbf8ba39c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application.cpp">
@@ -24,32 +42,32 @@
     <ClCompile Include="helpers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="userData.cpp">
+      <Filter>Source Files\user</Filter>
+    </ClCompile>
     <ClCompile Include="userDefine.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\user</Filter>
     </ClCompile>
     <ClCompile Include="userPresentation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="userData.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="teamDefine.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\user</Filter>
     </ClCompile>
     <ClCompile Include="teamData.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\team</Filter>
+    </ClCompile>
+    <ClCompile Include="teamDefine.cpp">
+      <Filter>Source Files\team</Filter>
     </ClCompile>
     <ClCompile Include="teamPresentation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="projectDefine.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\team</Filter>
     </ClCompile>
     <ClCompile Include="projectData.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\project</Filter>
+    </ClCompile>
+    <ClCompile Include="projectDefine.cpp">
+      <Filter>Source Files\project</Filter>
     </ClCompile>
     <ClCompile Include="projectPresentation.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\project</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -59,32 +77,32 @@
     <ClInclude Include="helpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="userDefine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="userPresentation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="userData.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="teamData.h">
+      <Filter>Header Files\team</Filter>
     </ClInclude>
     <ClInclude Include="teamDefine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="teamData.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\team</Filter>
     </ClInclude>
     <ClInclude Include="teamPresentation.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\team</Filter>
+    </ClInclude>
+    <ClInclude Include="userData.h">
+      <Filter>Header Files\user</Filter>
+    </ClInclude>
+    <ClInclude Include="userDefine.h">
+      <Filter>Header Files\user</Filter>
+    </ClInclude>
+    <ClInclude Include="userPresentation.h">
+      <Filter>Header Files\user</Filter>
     </ClInclude>
     <ClInclude Include="projectDefine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="projectData.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\project</Filter>
     </ClInclude>
     <ClInclude Include="projectPresentation.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\project</Filter>
+    </ClInclude>
+    <ClInclude Include="projectData.h">
+      <Filter>Header Files\project</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
