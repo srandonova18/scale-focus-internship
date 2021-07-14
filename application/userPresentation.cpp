@@ -14,7 +14,7 @@ std::vector<MENU_OPTION_USER> initializeUserManagementViewMenuOptions()
 	{
 		{1, ". Create new user", addUser},
 		{2, ". Edit user", editUserMenu},
-		{3, ". Delete user",},
+		{3, ". Delete user", stillUnderDevelopmentMessage},
 		{4, ". View all users", getAllUsers},
 		{5, ". Return to main menu", mainMenuAdminToUserWrapper}
 	};
@@ -63,6 +63,13 @@ void editUserMenu(nanodbc::connection connection, USER& user, const USER& curren
 
 	showMenuOptions<MENU_OPTION_USER>(options);
 	handleUserChoiceUser(options, connection, user, currentUser);
+}
+
+void stillUnderDevelopmentMessage(nanodbc::connection connection, USER& user, const USER& currentUser)
+{
+	std::cout << "\nSorry, this functionality is still under development. :)\n";
+
+	userManagementView(connection, user, currentUser);
 }
 
 

@@ -7,7 +7,7 @@ std::vector<MENU_OPTION_PROJECT> initializeProjectManagementViewMenuOptions()
 	{
 		{1, ". Create new project", addProject},
 		{2, ". Edit project", editProjectMenu},
-		{3, ". Delete project"},
+		{3, ". Delete project", stillUnderDevelopmentMessage},
 		{4, ". View all projects", getAllProjects},
 		{5, ". Return to main menu", mainMenuUserToProjectWrapper}
 	};
@@ -71,5 +71,12 @@ void editProjectMenu(nanodbc::connection connection, PROJECT& project, const USE
 		std::cout << std::endl << "You don't have access to this project." << std::endl;
 		editProjectMenu(connection, project, currentUser);
 	}
+}
+
+void stillUnderDevelopmentMessage(nanodbc::connection connection, PROJECT& project, const USER& currentUser)
+{
+	std::cout << "\nSorry, this functionality is still under development. :)\n";
+
+	projectManagementView(connection, project, currentUser);
 }
 

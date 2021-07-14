@@ -13,7 +13,7 @@ std::vector<MENU_OPTION_TEAM> initializeTeamManagementViewMenuOptions()
 	{
 		{1, ". Create new team", addTeam},
 		{2, ". Edit team", editTeamMenu},
-		{3, ". Delete team",},
+		{3, ". Delete team", stillUnderDevelopmentMessage},
 		{4, ". View all teams", getAllTeams},
 		{5, ". Return to main menu", mainMenuAdminToTeamWrapper}
 	};
@@ -59,4 +59,11 @@ void editTeamMenu(nanodbc::connection connection, TEAM& team, const USER& curren
 
 	showMenuOptions<MENU_OPTION_TEAM>(options);
 	handleUserChoiceTeam(options, connection, team, currentUser);
+}
+
+void stillUnderDevelopmentMessage(nanodbc::connection connection, TEAM& team, const USER& currentUser)
+{
+	std::cout << "\nSorry, this functionality is still under development. :)\n";
+
+	teamManagementView(connection, team, currentUser);
 }

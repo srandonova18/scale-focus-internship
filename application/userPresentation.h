@@ -11,5 +11,7 @@ std::vector<MENU_OPTION_USER> initializeEditUserMenuOptions();
 
 void editUserMenu(nanodbc::connection connection, USER& user, const USER& currentUser);
 
+void stillUnderDevelopmentMessage(nanodbc::connection connection, USER& user, const USER& currentUser);
+
 void mainMenuAdminToUserWrapper(nanodbc::connection connection, USER& user, const USER& currentUser);
 
