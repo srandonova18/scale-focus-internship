@@ -3,8 +3,6 @@
 #include <iostream>
 #include <nanodbc.h>
 
-#include "userDefine.h"
-
 enum STATUS
 {
 	PENDING,

@@ -168,6 +168,7 @@
     <ClInclude Include="userData.h" />
     <ClInclude Include="userDefine.h" />
     <ClInclude Include="userPresentation.h" />
+    <ClInclude Include="workLogDefine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
