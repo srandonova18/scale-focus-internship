@@ -31,6 +31,9 @@
     <Filter Include="Source Files\project">
       <UniqueIdentifier>{8a5bb634-d27e-40c1-9f35-2f4bbf8ba39c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\task">
+      <UniqueIdentifier>{0c3f0041-35c1-49e6-97be-e853564e8d97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application.cpp">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="projectData.h">
       <Filter>Header Files\project</Filter>
+    </ClInclude>
+    <ClInclude Include="taskDefine.h">
+      <Filter>Header Files\task</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

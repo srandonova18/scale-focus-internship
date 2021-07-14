@@ -161,6 +161,7 @@
     <ClInclude Include="projectData.h" />
     <ClInclude Include="projectDefine.h" />
     <ClInclude Include="projectPresentation.h" />
+    <ClInclude Include="taskDefine.h" />
     <ClInclude Include="teamData.h" />
     <ClInclude Include="teamDefine.h" />
     <ClInclude Include="teamPresentation.h" />
