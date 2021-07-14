@@ -18,3 +18,7 @@ void editProjectDescription(nanodbc::connection connection, std::string, const P
 void editProjectTitleMenu(nanodbc::connection connection, PROJECT& project, const USER& currentUser);
 
 void editProjectDescriptionMenu(nanodbc::connection connection, PROJECT& project, const USER& currentUser);
+
+bool isCreator(PROJECT project, USER currentUser);
+
+PROJECT getProjectById(nanodbc::connection connection, int id);

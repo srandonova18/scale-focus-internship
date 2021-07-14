@@ -70,13 +70,12 @@ void editProjectTitle(nanodbc::connection connection, std::string title, const P
 			[date_of_last_change] = getdate(),
 			last_changer_id = ?
 		WHERE
-			id = ?	AND creator_id = ?
+			id = ?
 	)"));
 
 	statement.bind(0, title.c_str());
 	statement.bind(1, &currentUser.id);
 	statement.bind(2, &project.id);
-	statement.bind(3, &currentUser.id);
 
 	execute(statement);
 }
@@ -93,15 +92,54 @@ void editProjectDescription(nanodbc::connection connection, std::string descript
 			[date_of_last_change] = getdate(),
 			last_changer_id = ?
 		WHERE
-			id = ? AND creator_id = ?
+			id = ?
 	)"));
 
 	statement.bind(0, description.c_str());
 	statement.bind(1, &currentUser.id);
 	statement.bind(2, &project.id);
-	statement.bind(3, &currentUser.id);
-
+	
 	execute(statement);
+}
+
+bool isCreator(PROJECT project, USER currentUser)
+{
+	return project.creatorId == currentUser.id;
+}
+
+PROJECT getProjectById(nanodbc::connection connection, int id)
+{
+	PROJECT foundProject;
+
+	nanodbc::statement statement(connection);
+	nanodbc::prepare(statement, NANODBC_TEXT(R"(
+	SELECT
+		*
+	FROM [project_management_application].[dbo].[projects]
+	WHERE 
+		id = ?
+	)"));
+
+	statement.bind(0, &id);
+
+	auto result = execute(statement);
+
+	while (result.next())
+	{
+		foundProject.id = result.get<int>("id");
+		foundProject.title = result.get<nanodbc::string>("title", "");
+		foundProject.description = result.get<nanodbc::string>("description", "");
+		foundProject.teamId = result.get<int>("team_id");
+		foundProject.dateOfCreation = result.get<nanodbc::date>("date_of_creation");
+		foundProject.creatorId = result.get<int>("creator_id");
+		foundProject.dateOfLastChange = result.get<nanodbc::date>("date_of_last_change");
+		foundProject.lastChangerId = result.get<int>("last_changer_id");
+		//foundProject.isDeleted = result.get<int>("is_deleted");
+
+		//showProject(foundProject);
+	}
+
+	return foundProject;
 }
 
 void editProjectTitleMenu(nanodbc::connection connection, PROJECT& project, const USER& currentUser)
@@ -117,7 +155,6 @@ void editProjectTitleMenu(nanodbc::connection connection, PROJECT& project, cons
 
 	editProjectMenu(connection, project, currentUser);
 }
-
 
 void editProjectDescriptionMenu(nanodbc::connection connection, PROJECT& project, const USER& currentUser)
 {
