@@ -15,13 +15,13 @@ USER loginMenu(nanodbc::connection connection)
 	USER currentUser;
 	bool isInputValid = false;
 
-	std::cout << std::endl;
-
 	std::cout << "Username: ";
-	currentUser.username = inputString(64, "Username: ");
+	currentUser.username = inputString(64, "\nUsername: ");
 
-	std::cout << "Password: ";
+	std::cout << "\nPassword: ";
 	currentUser.password = inputPassword();
+
+
 
 	currentUser = findUserByUsernameAndPassword(connection, currentUser);
 

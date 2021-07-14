@@ -21,7 +21,7 @@ void handleUserChoiceConstUser(std::vector<MENU_OPTION_CONST_USER>& options, nan
 		isInputInTheRange = isInputInRange(options.size(), choice);
 		if (!isInputValid or !isInputInTheRange)
 		{
-			std::cout << "The input is invalid, please try again." << std::endl;
+			std::cout << "\nThe input is invalid, please try again.\n";
 		}
 	}
 	
@@ -47,7 +47,7 @@ void handleUserChoiceUser(std::vector<MENU_OPTION_USER>& options, nanodbc::conne
 		isInputInTheRange = isInputInRange(options.size(), choice);
 		if (!isInputValid or !isInputInTheRange)
 		{
-			std::cout << "The input is invalid, please try again." << std::endl;
+			std::cout << "\nThe input is invalid, please try again.\n";
 		}
 	}
 
@@ -73,7 +73,7 @@ void handleUserChoiceConstTeam(std::vector<MENU_OPTION_CONST_TEAM>& options, nan
 		isInputInTheRange = isInputInRange(options.size(), choice);
 		if (!isInputValid or !isInputInTheRange)
 		{
-			std::cout << "The input is invalid, please try again." << std::endl;
+			std::cout << "\nThe input is invalid, please try again.\n";
 		}
 	}
 
@@ -99,7 +99,7 @@ void handleUserChoiceTeam(std::vector<MENU_OPTION_TEAM>& options, nanodbc::conne
 		isInputInTheRange = isInputInRange(options.size(), choice);
 		if (!isInputValid or !isInputInTheRange)
 		{
-			std::cout << "The input is invalid, please try again." << std::endl;
+			std::cout << "\nThe input is invalid, please try again.\n";
 		}
 	}
 
@@ -125,7 +125,7 @@ void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::conne
 		isInputInTheRange = isInputInRange(options.size(), choice);
 		if (!isInputValid or !isInputInTheRange)
 		{
-			std::cout << "The input is invalid, please try again." << std::endl;
+			std::cout << "\nThe input is invalid, please try again.\n";
 		}
 	}
 
@@ -151,7 +151,7 @@ void handleUserChoiceProject(std::vector<MENU_OPTION_PROJECT>& options, nanodbc:
 		isInputInTheRange = isInputInRange(options.size(), choice);
 		if (!isInputValid or !isInputInTheRange)
 		{
-			std::cout << "The input is invalid, please try again." << std::endl;
+			std::cout << "\nThe input is invalid, please try again.\n";
 		}
 	}
 

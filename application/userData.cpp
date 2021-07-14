@@ -32,14 +32,26 @@ std::string inputPassword()
 {
 	char ch;
 	std::string password;
+	bool isInputInTheRange = false;
 
-	while ((ch = _getch()) != '\r')
+	while (!isInputInTheRange)
 	{
-		password += ch;
-		std::cout << "*";
-	}
+		while ((ch = _getch()) != '\r')
+		{
+			password += ch;
+			std::cout << "*";
+		}
 
-	std::cout << std::endl;
+		isInputInTheRange = isInputInRange(32, password.length());
+
+		std::cout << std::endl;
+
+		if (!isInputInTheRange)
+		{
+			std::cout << "\nThe input is invalid, please try again.\n";
+			std::cout << "\nPassword: ";
+		}
+	}
 
 	return password;
 }
