@@ -9,13 +9,13 @@
 void addUser(nanodbc::connection connection, USER& newUser, const USER& currentUser)
 {
 	std::cout << std::endl << "Enter first name: ";
-	newUser.firstName = inputName();
+	newUser.firstName = inputString(32, "Enter first name: ");
 
 	std::cout << std::endl << "Enter last name: ";
-	newUser.lastName = inputName();
+	newUser.lastName = inputString(32, "Enter last name: ");
 
 	std::cout << std::endl << "Enter username: ";
-	newUser.username = inputName();
+	newUser.username = inputString(64, "Enter username: ");
 
 	std::cout << std:: endl << "Enter password: ";
 	newUser.password = inputPassword();

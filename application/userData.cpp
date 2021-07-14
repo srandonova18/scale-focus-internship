@@ -8,11 +8,22 @@
 #include "userDefine.h"
 #include "userPresentation.h"
 
-std::string inputName()
+std::string inputString(size_t size, std::string message)
 {
 	std::string name;
+	bool isInputInRangeVar = false;
+	bool isInputValid = false;
 
-	safeCin<std::string>(name);
+	while (!isInputInRangeVar or !isInputValid)
+	{
+		isInputValid = safeCin<std::string>(name);
+		isInputInRangeVar = isInputInRange(size, name.length());
+		if (!isInputValid or !isInputInRangeVar)
+		{
+			std::cout << "The input isn't in range. Please try again." << std::endl;
+			std::cout << message;
+		}
+	}
 
 	return name;
 }
@@ -27,6 +38,8 @@ std::string inputPassword()
 		password += ch;
 		std::cout << "*";
 	}
+
+	std::cout << std::endl;
 
 	return password;
 }
@@ -181,7 +194,7 @@ void editUsernameMenu(nanodbc::connection connection, USER& user, const USER& cu
 	std::string newUsername;
 
 	std::cout << std::endl << "Enter new username: ";
-	newUsername = inputName();
+	newUsername = inputString(64, "Enter new username: ");
 
 	editUsername(connection, newUsername, user, currentUser);
 
@@ -249,7 +262,7 @@ void editFirstNameMenu(nanodbc::connection connection, USER& user, const USER& c
 	std::string newFirstName;
 
 	std::cout << std::endl << "Enter new first name: ";
-	newFirstName = inputName();
+	newFirstName = inputString(32, "Enter new first name: ");
 
 	editFirstName(connection, newFirstName, user, currentUser);
 
@@ -283,7 +296,7 @@ void editLastNameMenu(nanodbc::connection connection, USER& user, const USER& cu
 	std::string newLastName;
 
 	std::cout << std::endl << "Enter new last name: ";
-	newLastName = inputName();
+	newLastName = inputString(32, "Enter new last name: ");
 
 	editLastName(connection, newLastName, user, currentUser);
 

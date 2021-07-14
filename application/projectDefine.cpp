@@ -6,10 +6,10 @@
 void addProject(nanodbc::connection connection, PROJECT& newProject, const USER& currentUser)
 {
 	std::cout << std::endl << "Enter title: ";
-	newProject.title = inputName();
+	newProject.title = inputString(25, "Enter title: ");
 
 	std::cout << std::endl << "Enter description: ";
-	newProject.description = inputName();
+	newProject.description = inputString(100, "Enter description: ");
 
 	insertProject(connection, newProject, currentUser);
 

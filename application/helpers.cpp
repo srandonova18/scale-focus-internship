@@ -11,9 +11,19 @@
 void handleUserChoiceConstUser(std::vector<MENU_OPTION_CONST_USER>& options, nanodbc::connection connection, const USER& user, const USER& currentUser)
 {
 	int choice;
+	bool isInputValid = false;
+	bool isInputInTheRange = false;
 
-	std::cout << std::endl << "Enter your choice: ";
-	std::cin >> choice;
+	while (!isInputInTheRange or !isInputValid) {
+
+		std::cout << "\nEnter your choice: ";
+		isInputValid = safeCin<int>(choice);
+		isInputInTheRange = isInputInRange(options.size(), choice);
+		if (!isInputValid or !isInputInTheRange)
+		{
+			std::cout << "The input is invalid, please try again." << std::endl;
+		}
+	}
 	
 	for (size_t i = 0; i < options.size(); i++)
 	{
@@ -27,9 +37,19 @@ void handleUserChoiceConstUser(std::vector<MENU_OPTION_CONST_USER>& options, nan
 void handleUserChoiceUser(std::vector<MENU_OPTION_USER>& options, nanodbc::connection connection, USER& user, const USER& currentUser)
 {
 	int choice;
+	bool isInputValid = false;
+	bool isInputInTheRange = false;
 
-	std::cout << std::endl << "Enter your choice: ";
-	std::cin >> choice;
+	while (!isInputInTheRange or !isInputValid) {
+
+		std::cout << "\nEnter your choice: ";
+		isInputValid = safeCin<int>(choice);
+		isInputInTheRange = isInputInRange(options.size(), choice);
+		if (!isInputValid or !isInputInTheRange)
+		{
+			std::cout << "The input is invalid, please try again." << std::endl;
+		}
+	}
 
 	for (size_t i = 0; i < options.size(); i++)
 	{
@@ -43,9 +63,19 @@ void handleUserChoiceUser(std::vector<MENU_OPTION_USER>& options, nanodbc::conne
 void handleUserChoiceConstTeam(std::vector<MENU_OPTION_CONST_TEAM>& options, nanodbc::connection connection, const TEAM& team, const USER& currentUser)
 {
 	int choice;
+	bool isInputValid = false;
+	bool isInputInTheRange = false;
 
-	std::cout << std::endl << "Enter your choice: ";
-	std::cin >> choice;
+	while (!isInputInTheRange or !isInputValid) {
+
+		std::cout << "\nEnter your choice: ";
+		isInputValid = safeCin<int>(choice);
+		isInputInTheRange = isInputInRange(options.size(), choice);
+		if (!isInputValid or !isInputInTheRange)
+		{
+			std::cout << "The input is invalid, please try again." << std::endl;
+		}
+	}
 
 	for (size_t i = 0; i < options.size(); i++)
 	{
@@ -59,9 +89,19 @@ void handleUserChoiceConstTeam(std::vector<MENU_OPTION_CONST_TEAM>& options, nan
 void handleUserChoiceTeam(std::vector<MENU_OPTION_TEAM>& options, nanodbc::connection connection, TEAM& team, const USER& currentUser)
 {
 	int choice;
+	bool isInputValid = false;
+	bool isInputInTheRange = false;
 
-	std::cout << std::endl << "Enter your choice: ";
-	std::cin >> choice;
+	while (!isInputInTheRange or !isInputValid) {
+
+		std::cout << "\nEnter your choice: ";
+		isInputValid = safeCin<int>(choice);
+		isInputInTheRange = isInputInRange(options.size(), choice);
+		if (!isInputValid or !isInputInTheRange)
+		{
+			std::cout << "The input is invalid, please try again." << std::endl;
+		}
+	}
 
 	for (size_t i = 0; i < options.size(); i++)
 	{
@@ -75,9 +115,19 @@ void handleUserChoiceTeam(std::vector<MENU_OPTION_TEAM>& options, nanodbc::conne
 void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser)
 {
 	int choice;
+	bool isInputValid = false;
+	bool isInputInTheRange = false;
 
-	std::cout << std::endl << "Enter your choice: ";
-	std::cin >> choice;
+	while (!isInputInTheRange or !isInputValid) {
+
+		std::cout << "\nEnter your choice: ";
+		isInputValid = safeCin<int>(choice);
+		isInputInTheRange = isInputInRange(options.size(), choice);
+		if (!isInputValid or !isInputInTheRange)
+		{
+			std::cout << "The input is invalid, please try again." << std::endl;
+		}
+	}
 
 	for (size_t i = 0; i < options.size(); i++)
 	{
@@ -91,9 +141,19 @@ void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::conne
 void handleUserChoiceProject(std::vector<MENU_OPTION_PROJECT>& options, nanodbc::connection connection, PROJECT& project, const USER& currentUser)
 {
 	int choice;
+	bool isInputValid = false;
+	bool isInputInTheRange = false;
 
-	std::cout << std::endl << "Enter your choice: ";
-	std::cin >> choice;
+	while (!isInputInTheRange or !isInputValid) {
+
+		std::cout << "\nEnter your choice: ";
+		isInputValid = safeCin<int>(choice);
+		isInputInTheRange = isInputInRange(options.size(), choice);
+		if (!isInputValid or !isInputInTheRange)
+		{
+			std::cout << "The input is invalid, please try again." << std::endl;
+		}
+	}
 
 	for (size_t i = 0; i < options.size(); i++)
 	{
@@ -102,6 +162,12 @@ void handleUserChoiceProject(std::vector<MENU_OPTION_PROJECT>& options, nanodbc:
 			options.at(i).handler(connection, project, currentUser);
 		}
 	}
+}
+
+
+bool isInputInRange(size_t size, size_t inputSize)
+{
+	return (inputSize > 0 and inputSize <= size);
 }
 
 

@@ -104,3 +104,5 @@ void handleUserChoiceTeam(std::vector<MENU_OPTION_TEAM>&, nanodbc::connection, T
 void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
 
 void handleUserChoiceProject(std::vector<MENU_OPTION_PROJECT>& options, nanodbc::connection connection, PROJECT& project, const USER& currentUser);
+
+bool isInputInRange(size_t size, size_t inputSize);

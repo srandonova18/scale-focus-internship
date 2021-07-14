@@ -8,7 +8,7 @@
 void addTeam(nanodbc::connection connection, TEAM& newTeam, const USER& currentUser)
 {
 	std::cout << std::endl << "Enter title: ";
-	newTeam.title = inputName();
+	newTeam.title = inputString(25, "Enter title: ");
 
 	insertTeam(connection, newTeam, currentUser);
 

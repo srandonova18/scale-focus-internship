@@ -6,7 +6,7 @@
 
 #include "userDefine.h"
 
-std::string inputName();
+std::string inputString(size_t, std::string);
 
 std::string inputPassword();
 

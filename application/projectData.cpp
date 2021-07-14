@@ -147,7 +147,7 @@ void editProjectTitleMenu(nanodbc::connection connection, PROJECT& project, cons
 	std::string newTitle;
 
 	std::cout << std::endl << "Enter new title: ";
-	newTitle = inputName();
+	newTitle = inputString(25, "Enter new title: ");
 
 	editProjectTitle(connection, newTitle, project, currentUser);
 
@@ -161,7 +161,7 @@ void editProjectDescriptionMenu(nanodbc::connection connection, PROJECT& project
 	std::string newDescription;
 
 	std::cout << std::endl << "Enter new description: ";
-	newDescription = inputName();
+	newDescription = inputString(100, "Enter new description: ");
 
 	editProjectDescription(connection, newDescription, project, currentUser);
 

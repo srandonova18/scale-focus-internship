@@ -108,7 +108,7 @@ void editTeamTitleMenu(nanodbc::connection connection, TEAM& team, const USER& c
 	std::string newTitle;
 
 	std::cout << std::endl << "Enter new title name: ";
-	newTitle = inputName();
+	newTitle = inputString(25, "Enter new title name: ");
 
 	editTeamTitle(connection, newTitle, team, currentUser);
 
