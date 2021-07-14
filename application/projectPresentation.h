@@ -7,7 +7,8 @@ std::vector<MENU_OPTION_PROJECT> initializeProjectManagementViewMenuOptions();
 
 void projectManagementView(nanodbc::connection connection, PROJECT& project, const USER& currentUser);
 
-void projectManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
+void projectManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team,
+	PROJECT& project, const USER& currentUser);
 
 void mainMenuUserToProjectWrapper(nanodbc::connection connection, PROJECT& project, const USER& currentUser);
 

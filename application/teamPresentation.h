@@ -7,11 +7,11 @@ using namespace std;
 
 std::vector<MENU_OPTION_TEAM> initializeTeamManagementViewMenuOptions();
 
-void teamManagementView(nanodbc::connection, TEAM&, const USER&);
+void teamManagementView(nanodbc::connection connection, TEAM& team, const USER& currentUser);
 
 std::vector<MENU_OPTION_TEAM> initializeEditTeamMenuOptions();
 
-void editTeamMenu(nanodbc::connection, TEAM&, const USER&);
+void editTeamMenu(nanodbc::connection connection, TEAM& team, const USER& currentUser);
 
 void mainMenuAdminToTeamWrapper(nanodbc::connection connection, TEAM& team, const USER& currentUser);
 

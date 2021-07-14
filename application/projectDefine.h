@@ -18,7 +18,7 @@ struct PROJECT
 	bool isDeleted = false;
 };
 
-void addProject(nanodbc::connection, PROJECT&, const USER&);
+void addProject(nanodbc::connection connection, PROJECT& newProject, const USER& currentUser);
 
-void showProject(PROJECT);
+void showProject(PROJECT project);
 

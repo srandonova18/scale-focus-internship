@@ -19,4 +19,4 @@ struct USER
 
 void addUser(nanodbc::connection connection, USER& newUser, const USER& currentUser);
 
-void showUser(USER);
+void showUser(USER user);

@@ -18,5 +18,5 @@ struct TEAM
 
 void addTeam(nanodbc::connection, TEAM&, const USER&);
 
-void showTeam(TEAM);
+void showTeam(TEAM team);
 

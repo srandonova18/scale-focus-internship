@@ -104,7 +104,7 @@ void mainMenu(nanodbc::connection connection)
 	}
 	else
 	{
-		std::cout << "The username or password is incorrect. ";
+		std::cout << "\nThe username or password is incorrect. ";
 		std::cout << "Please try to login again or refer to the admin to create an account.";
 
 		mainMenu(connection);

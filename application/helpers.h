@@ -5,15 +5,18 @@
 
 #include "presentation.h"
 
-typedef void (*MENU_HANDLER_CONST_USER)(nanodbc::connection connection, const USER& user, const USER& currentUser);
+typedef void (*MENU_HANDLER_CONST_USER)(nanodbc::connection connection,
+	const USER& user, const USER& currentUser);
 typedef void (*MENU_HANDLER_USER)(nanodbc::connection connection, USER& user, const USER& currentUser);
 
-typedef void (*MENU_HANDLER_CONST_TEAM)(nanodbc::connection connection, const TEAM& team, const USER& currentUser);
+typedef void (*MENU_HANDLER_CONST_TEAM)(nanodbc::connection connection,
+	const TEAM& team, const USER& currentUser);
 typedef void (*MENU_HANDLER_TEAM)(nanodbc::connection connection, TEAM& team, const USER& currentUser);
 
 typedef void (*MENU_HANDLER_VIEW)(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
 
-typedef void (*MENU_HANDLER_CONST_PROJECT)(nanodbc::connection connection, const PROJECT& team, const USER& currentUser);
+typedef void (*MENU_HANDLER_CONST_PROJECT)(nanodbc::connection connection,
+	const PROJECT& team, const USER& currentUser);
 typedef void (*MENU_HANDLER_PROJECT)(nanodbc::connection connection, PROJECT& team, const USER& currentUser);
 
 
@@ -101,8 +104,10 @@ void handleUserChoiceConstTeam(std::vector<MENU_OPTION_CONST_TEAM>&, nanodbc::co
 
 void handleUserChoiceTeam(std::vector<MENU_OPTION_TEAM>&, nanodbc::connection, TEAM&, const USER&);
 
-void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
+void handleUserChoiceView(std::vector<MENU_OPTION_VIEW>& options, nanodbc::connection connection,
+	USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
 
-void handleUserChoiceProject(std::vector<MENU_OPTION_PROJECT>& options, nanodbc::connection connection, PROJECT& project, const USER& currentUser);
+void handleUserChoiceProject(std::vector<MENU_OPTION_PROJECT>& options, nanodbc::connection connection,
+	PROJECT& project, const USER& currentUser);
 
 bool isInputInRange(size_t size, size_t inputSize);

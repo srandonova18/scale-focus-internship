@@ -7,13 +7,15 @@
 #include "projectDefine.h"
 #include "userDefine.h"
 
-void insertProject(nanodbc::connection, const PROJECT&, const USER&);
+void insertProject(nanodbc::connection connection, const PROJECT& project, const USER& currentUser);
 
-void getAllProjects(nanodbc::connection, PROJECT&, const USER&);
+void getAllProjects(nanodbc::connection connection, PROJECT& project, const USER& currentUser);
 
-void editProjectTitle(nanodbc::connection, std::string, const PROJECT&, const USER&);
+void editProjectTitle(nanodbc::connection connection, std::string title,
+	const PROJECT& project, const USER& currentUser);
 
-void editProjectDescription(nanodbc::connection connection, std::string, const PROJECT&, const USER&);
+void editProjectDescription(nanodbc::connection connection, std::string description,
+	const PROJECT& project, const USER& currentUser);
 
 void editProjectTitleMenu(nanodbc::connection connection, PROJECT& project, const USER& currentUser);
 

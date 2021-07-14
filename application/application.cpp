@@ -15,7 +15,9 @@ int main()
 {
     try
     {
-        nanodbc::string connstr = NANODBC_TEXT("DRIVER={ODBC Driver 17 for SQL Server};SERVER=DESKTOP-U38BG7I\\SQLEXPRESS;DATABASE=project_management_application;Trusted_Connection=yes;"); // an ODBC connection string to your database
+        // ODBC connection string to your database ( must be changed on every different device )
+        nanodbc::string connstr = NANODBC_TEXT
+            ("DRIVER={ODBC Driver 17 for SQL Server};SERVER=DESKTOP-U38BG7I\\SQLEXPRESS;DATABASE=project_management_application;Trusted_Connection=yes;");
 
         nanodbc::connection conn(connstr);
 

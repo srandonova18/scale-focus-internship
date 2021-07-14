@@ -15,14 +15,18 @@ bool isRegistered(const USER&);
 
 std::vector<MENU_OPTION_VIEW> initializeMainMenuAdminOptions();
 
-void teamManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
+void teamManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team,
+	PROJECT& project, const USER& currentUser);
 
-void userManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
+void userManagementViewWrapper(nanodbc::connection connection, USER& user, TEAM& team,
+	PROJECT& project, const USER& currentUser);
 
-void mainMenuAdmin(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
+void mainMenuAdmin(nanodbc::connection connection, USER& user, TEAM& team,
+	PROJECT& project, const USER& currentUser);
 
 std::vector<MENU_OPTION_VIEW> initializeMainMenuUserOptions();
 
-void mainMenuUser(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
+void mainMenuUser(nanodbc::connection connection, USER& user, TEAM& team,
+	PROJECT& project, const USER& currentUser);
 
 void mainMenu(nanodbc::connection connection);
