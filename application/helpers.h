@@ -5,40 +5,20 @@
 
 #include "presentation.h"
 
-typedef void (*MENU_HANDLER_CONST_USER)(nanodbc::connection connection,
-	const USER& user, const USER& currentUser);
 typedef void (*MENU_HANDLER_USER)(nanodbc::connection connection, USER& user, const USER& currentUser);
 
-typedef void (*MENU_HANDLER_CONST_TEAM)(nanodbc::connection connection,
-	const TEAM& team, const USER& currentUser);
 typedef void (*MENU_HANDLER_TEAM)(nanodbc::connection connection, TEAM& team, const USER& currentUser);
 
 typedef void (*MENU_HANDLER_VIEW)(nanodbc::connection connection, USER& user, TEAM& team, PROJECT& project, const USER& currentUser);
 
-typedef void (*MENU_HANDLER_CONST_PROJECT)(nanodbc::connection connection,
-	const PROJECT& team, const USER& currentUser);
 typedef void (*MENU_HANDLER_PROJECT)(nanodbc::connection connection, PROJECT& team, const USER& currentUser);
 
-
-struct MENU_OPTION_CONST_USER
-{
-	int number = 0;
-	const char* message;
-	MENU_HANDLER_CONST_USER handler;
-};
 
 struct MENU_OPTION_USER
 {
 	int number = 0;
 	const char* message;
 	MENU_HANDLER_USER handler;
-};
-
-struct MENU_OPTION_CONST_TEAM
-{
-	int number = 0;
-	const char* message;
-	MENU_HANDLER_CONST_TEAM handler;
 };
 
 struct MENU_OPTION_TEAM
@@ -53,13 +33,6 @@ struct MENU_OPTION_VIEW
 	int number = 0;
 	const char* message;
 	MENU_HANDLER_VIEW handler;
-};
-
-struct MENU_OPTION_CONST_PROJECT
-{
-	int number = 0;
-	const char* message;
-	MENU_HANDLER_CONST_PROJECT handler;
 };
 
 struct MENU_OPTION_PROJECT
@@ -83,8 +56,6 @@ bool safeCin(T& data)
 	return true;
 };
 
-void handleUserChoiceConstUser(std::vector<MENU_OPTION_CONST_USER>&, nanodbc::connection, const USER&, const USER&);
-
 template <class T>
 void showMenuOptions(std::vector<T>& options)
 {
@@ -99,8 +70,6 @@ void showMenuOptions(std::vector<T>& options)
 }
 
 void handleUserChoiceUser(std::vector<MENU_OPTION_USER>&, nanodbc::connection, USER&, const USER&);
-
-void handleUserChoiceConstTeam(std::vector<MENU_OPTION_CONST_TEAM>&, nanodbc::connection, const TEAM&, const USER&);
 
 void handleUserChoiceTeam(std::vector<MENU_OPTION_TEAM>&, nanodbc::connection, TEAM&, const USER&);
 
